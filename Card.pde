@@ -10,7 +10,7 @@ class Card
         this.question = a;
     }
     //method
-    void switchingAnamation(float speed, float paddingx, float paddingy)
+    void switchingAnimation(float speed, float paddingx, float paddingy)    //Animation of flipping the flashcard
     {
         //for (int i = 0; i < width; i++)
         //{
@@ -26,8 +26,8 @@ class Card
     }
     void displayQuestion(String question, float switchSpeed, float paddingx, float paddingy)
     {
-        switchingAnamation(switchSpeed, paddingx, paddingy);
-        text(question, float(width/4), 100, float(3*width/4), height-200);
+        switchingAnimation(((width-paddingx)/(frameRate*switchSpeed)), paddingx, paddingy);
+        text(question, float(width/4), paddingy, float(width/2), height-paddingy);
     }
     void displayAnwser()
     {}
