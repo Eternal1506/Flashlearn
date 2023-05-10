@@ -3,7 +3,7 @@ class Card {
   //field
   String question;
   String answer;
-  ArrayList<int> useranswers = new ArrayList<int>();
+  IntList useranswers;
   float timer;
   float currentprob;
   
