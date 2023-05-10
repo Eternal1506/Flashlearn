@@ -1,9 +1,67 @@
+int cardNumber;
+int currentCard = 0;
+int currentQuestion;
+boolean drawCard = false;
+ArrayList<Card> AL_Card = new ArrayList<Card>();
+float animationSpeed = 2;
+float paddingx =50;
+float paddingy = 100;
+float paddingxCopy =paddingx;
 
-
-void setup(){
-frameRate(60);  
+void setup()
+{
+    size(600, 600);
+    frameRate(60);
+    rectMode(CENTER);
 }
 
-void draw(){
+void draw()
+{
+    //Initialize variables
+    if (currentCard == 0)
+    {
+        //Starting page
+    }
+    if (drawCard == true)
+    {
+        //draw Current Card
+        displayQuestion();
+    }
+    if (/*question answered*/)
+    {
+        //feedback
+        displayAnswer();
+    }
+    if (currentCard == cardNumber)
+    {
+        //show results
+    }
+}
 
+
+void displayQuestion()
+{
+    paddingxCopy+=animationSpeed;
+    if (paddingxCopy <= width-paddingx)
+    {
+        background(255, 255, 255);
+        rect(paddingxCopy, 50, round(width-2*paddingxCopy), round(height - paddingy));
+    }
+    else
+    {
+        text(AL_Card.get(currentCard).question, width/2, height/2, 3*width/3, height-2*paddingy);
+    }
+}
+void displayAnswer()
+{
+    paddingxCopy+=animationSpeed;
+    if (paddingxCopy <= width-paddingx)
+    {
+        background(255, 255, 255);
+        rect(paddingxCopy, 50, round(width-2*paddingxCopy), round(height - paddingy));
+    }
+    else
+    {
+        text(AL_Card.get(currentCard).answer, width/2, height/2, 3*width/3, height-2*paddingy);
+    }
 }
