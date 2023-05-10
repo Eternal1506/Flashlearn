@@ -4,9 +4,9 @@ int currentQuestion;
 boolean drawCard = false;
 ArrayList<Card> AL_Card = new ArrayList<Card>();
 float animationSpeed = 2;
-float paddingx =50;
+float paddingx = 50;
 float paddingy = 100;
-float paddingxCopy =paddingx;
+float paddingxCopy = paddingx;
 
 void setup()
 {
