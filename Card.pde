@@ -25,10 +25,10 @@ class Card {
   
   void CheckUserAnswer(String ans){ // Function to check user answers
     if (ans.equals(this.answer)){
-      this.useranswers.add(1);
+      this.useranswers.append(1);
     }
     else{
-      this.useranswers.add(0);
+      this.useranswers.append(0);
     }
   }
   
