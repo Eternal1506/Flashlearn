@@ -7,7 +7,7 @@ float animationTime = 5;
 float animationSpeed;
 float paddingx =50;
 float paddingy = 100;
-float paddingxCopy =paddingx;
+float paddingxCopy = paddingx;
 
 void setup()
 {
