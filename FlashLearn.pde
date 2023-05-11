@@ -27,7 +27,7 @@ void draw()
     if (drawCard == true)
     {
         //draw Current Card
-        displayQuestion();
+        displayTextOnCard(AL_Card.get(currentCard).question);    //display question
     }
     //if (/*question answered*/)
     //{
@@ -41,7 +41,7 @@ void draw()
 }
 
 
-void displayQuestion()
+void displayTextOnCard(String text)
 {
     paddingxCopy+=animationSpeed;
     if (paddingxCopy <= width-paddingx)
@@ -52,21 +52,6 @@ void displayQuestion()
     else
     {
         fill(0);
-        text(AL_Card.get(currentCard).question, width/2, height/2, 3*width/4, height-2*paddingy);    //display the question
-    }
-}
-
-void displayAnswer()
-{
-    paddingxCopy+=animationSpeed;
-    if (paddingxCopy <= width-paddingx)
-    {
-        background(255, 255, 255);
-        rect(width/2, height/2, round(width-2*paddingxCopy), round(height - paddingy));
-    }
-    else
-    {
-        fill(0);
-        text(AL_Card.get(currentCard).answer, width/2, height/2, 3*width/4, height-2*paddingy);
+        text(text, width/2, height/2, 3*width/4, height-2*paddingy);    //display the question
     }
 }
