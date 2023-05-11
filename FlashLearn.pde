@@ -8,6 +8,9 @@ float animationSpeed;    //time (in seconds) the animation takes
 float paddingx =50;
 float paddingy = 100;
 float paddingxCopy = paddingx;
+ArrayList<Card> cardlist = new ArrayList<Card>();
+float desiredprob = 0.7;
+
 
 void setup()
 {

@@ -1,12 +1,22 @@
-void nextcard(ArrayList<Card> cardlist ){ // Alogorithm to determine the order of card to be displayed (adaptive learning funcition) 
+void nextcard(){ // Alogorithm to determine the order of card to be displayed (adaptive learning funcition) 
   float desiredprob = 0.7;
-  int index;
-  float lowestprob = 1;
-  for (int i = 0; i < cardlist.size(); i++){
-    cardlist.get(i).Correctanswerprob();
-    if (cardlist.get(i).currentprob < lowestprob){
-      lowestprob = cardlist.get(i).currentprob;
-      index = i;
+
+  ArrayList<Card> cardtobechoosen = new ArrayList<Card>();
+
+  for (Card c : cardlist){ 
+    c.Correctanswerprob();
+    if (c.currentprob < desiredprob){
+      cardtobechoosen.add(c);
     }
   }
-} // the alogorithm is incomplete for now
+  Card newC = pickrandomcard(cardlist.get(-1), cardtobechoosen.size(), cardtobechoosen);
+  cardlist.add(newC);
+} // Its done but needs to be checked
+
+Card pickrandomcard(Card c, int s, ArrayList<Card> list){ // helper function for the nextcard()
+  int r = int(random(s + 1));
+  while (c.question.equals( list.get(r).question)){
+    r = int(random(s + 1));
+  }
+  return list.get(r);
+}

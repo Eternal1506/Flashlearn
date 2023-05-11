@@ -13,16 +13,6 @@ class Card {
     this.question = a;
   }
   
-  //void switchingAnimation(float speed, float px, float py)    //Animation of flipping the flashcard
-  //{
-  //    px+=speed;
-  //    if (px <= width-px)
-  //    {
-  //        background(255, 255, 255);
-  //        rect(px, 50, round(width-2*px), round(height - py));
-  //    }
-  //}
-  
   void CheckUserAnswer(String ans){ // Function to check user answers
     if (ans.equals(this.answer)){
       this.useranswers.append(1);
