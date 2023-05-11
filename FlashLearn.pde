@@ -2,12 +2,13 @@ int cardNumber;
 int currentCard = 0;
 int currentQuestion;
 boolean drawCard = false;
-ArrayList<Card> AL_Card = new ArrayList<Card>();
+ArrayList<Card> AL_Card = new ArrayList<Card>();    //ArrayList of all cards from user
 float animationTime = 5;
 float animationSpeed;    //time (in seconds) the animation takes
 float paddingx =50;
 float paddingy = 100;
 float paddingxCopy = paddingx;
+int cardButton;
 
 void setup()
 {
@@ -24,10 +25,14 @@ void draw()
     {
         startScreen();
     }
+    if (cardButton != currentCard)
+    {
+        //currentCard = nextCard;
+    }
     if (drawCard == true)
     {
         //draw Current Card
-        displayTextOnCard(AL_Card.get(currentCard).question);    //display question
+        displayCard(AL_Card.get(currentCard).question);    //display question
     }
     //if (/*question answered*/)
     //{
@@ -36,12 +41,12 @@ void draw()
     //}
     if (currentCard == cardNumber)
     {
-        //show results
+        //show ratings
     }
 }
 
 
-void displayTextOnCard(String text)
+void displayCard(String text)
 {
     paddingxCopy+=animationSpeed;
     if (paddingxCopy <= width-paddingx)
