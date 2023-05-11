@@ -2,15 +2,15 @@ int cardNumber;
 int currentCard = 0;
 int currentQuestion;
 boolean drawCard = false;
-ArrayList<Card> AL_Card = new ArrayList<Card>();
+ArrayList<Card> AL_Card = new ArrayList<Card>();    //ArrayList of all cards from user
 float animationTime = 5;
 float animationSpeed;    //time (in seconds) the animation takes
 float paddingx =50;
 float paddingy = 100;
 float paddingxCopy = paddingx;
+
 ArrayList<Card> cardlist = new ArrayList<Card>();
 float desiredprob = 0.7;
-
 
 void setup()
 {
@@ -25,12 +25,16 @@ void draw()
     //Initialize variables
     if (currentCard == 0)
     {
-        //Starting page
+        startScreen();
+    }
+    if (cardButton != currentCard)
+    {
+        //currentCard = nextCard;
     }
     if (drawCard == true)
     {
         //draw Current Card
-        displayQuestion();
+        displayCard(AL_Card.get(currentCard).question);    //display question
     }
     //if (/*question answered*/)
     //{
@@ -39,12 +43,12 @@ void draw()
     //}
     if (currentCard == cardNumber)
     {
-        //show results
+        //show ratings
     }
 }
 
 
-void displayQuestion()
+void displayCard(String text)
 {
     paddingxCopy+=animationSpeed;
     if (paddingxCopy <= width-paddingx)
@@ -55,21 +59,6 @@ void displayQuestion()
     else
     {
         fill(0);
-        text(AL_Card.get(currentCard).question, width/2, height/2, 3*width/4, height-2*paddingy);    //display the question
-    }
-}
-
-void displayAnswer()
-{
-    paddingxCopy+=animationSpeed;
-    if (paddingxCopy <= width-paddingx)
-    {
-        background(255, 255, 255);
-        rect(width/2, height/2, round(width-2*paddingxCopy), round(height - paddingy));
-    }
-    else
-    {
-        fill(0);
-        text(AL_Card.get(currentCard).answer, width/2, height/2, 3*width/4, height-2*paddingy);
+        text(text, width/2, height/2, 3*width/4, height-2*paddingy);    //display the question
     }
 }

@@ -1,5 +1,6 @@
 int time;
 void startScreen() {
+  rectMode(CORNER);
   //Text
   background(0);
   textAlign(CENTER);
