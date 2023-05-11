@@ -1,34 +1,43 @@
-class Card
-{
-    //feild
-    String question;
-    String answer;
-    //constructor
-    Card (String q, String a)
-    {
-        this.question = q;
-        this.question = a;
+class Card {
+
+  //field
+  String question;
+  String answer;
+  IntList useranswers;
+  float timer;
+  float currentprob;
+  
+  //constructor
+  Card (String q, String a){
+    this.question = q;
+    this.question = a;
+  }
+  
+  //void switchingAnimation(float speed, float px, float py)    //Animation of flipping the flashcard
+  //{
+  //    px+=speed;
+  //    if (px <= width-px)
+  //    {
+  //        background(255, 255, 255);
+  //        rect(px, 50, round(width-2*px), round(height - py));
+  //    }
+  //}
+  
+  void CheckUserAnswer(String ans){ // Function to check user answers
+    if (ans.equals(this.answer)){
+      this.useranswers.append(1);
     }
-    //method
-    void switchingAnimation(float speed, float paddingx, float paddingy)    //Animation of flipping the flashcard
-    {
-        //for (int i = 0; i < width; i++)
-        //{
-        //    fill(0);
-        //    square(i, 0, width-i);
-        //}
-        paddingx+=speed;
-        if (paddingx <= width-paddingx)
-        {
-            background(255, 255, 255);
-            rect(paddingx, 50, round(width-2*paddingx), round(height - paddingy));
-        }
+    else{
+      this.useranswers.append(0);
     }
-    void displayQuestion(String question, float switchSpeed, float paddingx, float paddingy)
-    {
-        switchingAnimation(((width-paddingx)/(frameRate*switchSpeed)), paddingx, paddingy);
-        text(question, float(width/4), paddingy, float(width/2), height-paddingy);
+  }
+  
+  void Correctanswerprob(){ // function to figure out how many time user has answered this question correctly
+      
+    int cardscore = 0;
+    for (int i = 0; i < this.useranswers.size(); i++){
+      cardscore += this.useranswers.get(i);
     }
-    void displayAnwser()
-    {}
+    this.currentprob = float(cardscore)/this.useranswers.size();
+  }
 }
