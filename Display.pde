@@ -1,25 +1,32 @@
 int time;
+// x = 300;
+int x = width*3, y = 150;
+color red = color(255,25,50);
+
 void startScreen() {
   rectMode(CORNER);
-  //Text
-  background(0);
-  textAlign(CENTER);
-  fill(255,25,50);
-  textSize(100);
-  text("FlashLeArn",300,150);
   
-  //Underline
-  rect(40,160,520,25);
+    //Text
+    background(0);
+    textAlign(CENTER);
+    fill(red);
+    textSize(100);
+    text("FlashLeArn",x,y);
+    
+    //Underline
+    rect(x-260,y+20,520,25);
+    
+    //Circle around the "A" in Learn
+    noFill();
+    strokeWeight(6);
+    stroke(255,25,50);
+    circle(x+128,y-30,80);
+    
+    //Plus symbol
+    fill(red);
+    rect(x+160,y-85,1,13);
+    rect(x+154,y-80,13,1);
   
-  //Circle around the "A" in Learn
-  noFill();
-  strokeWeight(6);
-  stroke(255,25,50);
-  circle(428,120,80);
-  
-  //Plus symbol
-  fill(255,25,50);
-  rect(460,65,1,13);
-  rect(454,70,13,1);
+   x += 0.5;
  
 }
