@@ -22,7 +22,7 @@ void draw()
     //Initialize variables
     if (currentCard == 0)
     {
-        //Starting page
+        startScreen();
     }
     if (drawCard == true)
     {
