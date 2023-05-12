@@ -1,11 +1,10 @@
 int time;
 // x = 300;
-int x = width*3, y = 150;
+
 color red = color(255,25,50);
 
 void startScreen() {
-  rectMode(CORNER);
-  
+    rectMode(CORNER);
     //Text
     background(0);
     textAlign(CENTER);
