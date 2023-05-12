@@ -3,6 +3,9 @@ int time;
 
 color red = color(255,25,50);
 
+void mainmenu(){
+  
+}
 void startScreen() {
     rectMode(CORNER);
     //Text
