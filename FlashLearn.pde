@@ -10,25 +10,24 @@ float paddingy = 100;
 float paddingxCopy = paddingx;
 ArrayList<Card> cardlist = new ArrayList<Card>();
 float desiredprob = 0.7;
+int startX, startY;
+color red = color(255,25,50);
 int cardButton;
-int halfWidth;
-int x, y;
-
 
 void setup()
 {
     size(600, 600);
-    mainmenu();
-    x = width/2;
-    y= 150;
+    startX = -(width/2);
+    startY = (height/4);
     frameRate(60);
     rectMode(CENTER);
     createGUI();
     animationSpeed = (width-paddingx)/animationTime;    //Calculated Speed to be used in animation
+    mainmenu();
 }
 
 void draw(){
-  
+
   //Initialize variables
   if (state == "menu"){
       startScreen();

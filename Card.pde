@@ -22,7 +22,7 @@ class Card {
     }
   }
   
-  void Correctanswerprob(){ // function to figure out how many time user has answered this question correctly
+  void Correctanswerprob(){ // function to figure out how many times user has answered this question correctly
       
     int cardscore = 0;
     for (int i = 0; i < this.useranswers.size(); i++){
