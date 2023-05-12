@@ -13,11 +13,11 @@ int cardButton;
 int halfWidth;
 int x, y;
 
+
 void setup()
 {
     size(600, 600);
-    halfWidth = 300;
-    x = halfWidth;
+    x = width/2;
     y= 150;
     frameRate(60);
     rectMode(CENTER);
@@ -31,7 +31,7 @@ void draw(){
   {
       startScreen();
   }
-}
+
 
 
 void displayCard(String text)
