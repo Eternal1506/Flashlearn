@@ -31,8 +31,7 @@ void draw(){
   {
       startScreen();
   }
-
-
+}
 
 void displayCard(String text)
 {
