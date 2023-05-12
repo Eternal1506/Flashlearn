@@ -4,7 +4,26 @@ int time;
 color red = color(255,25,50);
 
 void mainmenu(){
-  
+  state = "menu";
+  start.setVisible(true);
+  //next.setVisible(false);
+  //back.setVisible(false);
+  //songSelection.setVisible(true);
+  //exit.setVisible(false);
+  //backToMenu.setVisible(false);
+  //volumeLabel.setVisible(false);
+}
+
+void makecard(){
+  background(255);
+  state = "make";
+  start.setVisible(false);
+  //next.setVisible(false);
+  //back.setVisible(false);
+  //songSelection.setVisible(true);
+  //exit.setVisible(false);
+  //backToMenu.setVisible(false);
+  //volumeLabel.setVisible(false);
 }
 void startScreen() {
     rectMode(CORNER);
