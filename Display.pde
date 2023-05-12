@@ -1,3 +1,6 @@
+void mainmenu(){
+  
+}
 void startScreen() {
  if (startX < 300) {
   rectMode(CORNER);

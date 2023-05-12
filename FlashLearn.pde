@@ -1,6 +1,5 @@
-int cardNumber;
-int currentCard = 0;
-int currentQuestion;
+String state;
+boolean mainmenu = true;
 boolean drawCard = false;
 ArrayList<Card> AL_Card = new ArrayList<Card>();    //ArrayList of all cards from user
 float animationTime = 5;
@@ -12,6 +11,7 @@ ArrayList<Card> cardlist = new ArrayList<Card>();
 float desiredprob = 0.7;
 int startX, startY;
 color red = color(255,25,50);
+int cardButton;
 
 void setup()
 {
@@ -23,28 +23,14 @@ void setup()
     animationSpeed = (width-paddingx)/animationTime;    //Calculated Speed to be used in animation
 }
 
-void draw()
-{
-    //Initialize variables
-    if (currentCard == 0)
-    {
-        startScreen();
-    }
-    if (drawCard == true)
-    {
-        //draw Current Card
-        displayCard(AL_Card.get(currentCard).question);    //display question
-    }
-    //if (/*question answered*/)
-    //{
-    //    //feedback
-    //    displayAnswer();
-    //}
-    if (currentCard == cardNumber)
-    {
-        //show ratings
-    }
+void draw(){
+  //Initialize variables
+  if (mainmenu)
+  {
+      startScreen();
+  }
 }
+
 
 
 void displayCard(String text)
