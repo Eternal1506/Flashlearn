@@ -8,21 +8,16 @@ float animationSpeed;    //time (in seconds) the animation takes
 float paddingx =50;
 float paddingy = 100;
 float paddingxCopy = paddingx;
-<<<<<<< Updated upstream
-
 ArrayList<Card> cardlist = new ArrayList<Card>();
 float desiredprob = 0.7;
-=======
-int cardButton;
-int halfWidth;
 int x, y;
->>>>>>> Stashed changes
+color red = color(255,25,50);
+int time;
 
 void setup()
 {
     size(600, 600);
-    halfWidth = 300;
-    x = halfWidth;
+    x = width/2;
     y= 150;
     frameRate(60);
     rectMode(CENTER);
@@ -31,16 +26,10 @@ void setup()
 
 void draw()
 {
-    println(halfWidth);
     //Initialize variables
     if (currentCard == 0)
     {
-        print("halfWidth is now", halfWidth);
         startScreen();
-    }
-    if (cardButton != currentCard)
-    {
-        //currentCard = nextCard;
     }
     if (drawCard == true)
     {
