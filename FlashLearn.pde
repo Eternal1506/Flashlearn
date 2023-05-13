@@ -29,19 +29,29 @@ void draw(){
   {
       startScreen();
   }
+  if (drawCard){
+      displayCard("Question", "Answer");
+  }
 }
 
-void displayCard(String text)
+void displayCard(String q, String a)
 {
-    paddingxCopy+=animationSpeed;
-    if (paddingxCopy <= width-paddingx)
-    {
-        background(255, 255, 255);
+    rectMode(CENTER);
+    textAlign(CENTER);
+    //paddingxCopy+=animationSpeed;
+    //if (paddingxCopy <= width-paddingx)
+    //{
+    //    background(255, 255, 255);
+        fill(255);
         rect(width/2, height/2, round(width-2*paddingxCopy), round(height - paddingy));    //animation of flipping the card
-    }
-    else
-    {
+        rect(width/2, paddingy+((height-2*paddingy)/4), height/2, (height-2*paddingy)/2);
+        rect(width/2, paddingy+(3*(height-2*paddingy)/4), height/2, (height-2*paddingy)/2);
+    //}
+    //else
+    //{
         fill(0);
-        text(text, width/2, height/2, 3*width/4, height-2*paddingy);    //display the question
-    }
+        
+        text(q, width/2, paddingy+((height-2*paddingy)/4), height/2, (height-2*paddingy)/2);    //display the question
+        text(a, width/2, paddingy+(3*(height-2*paddingy)/4), height/2, (height-2*paddingy)/2);
+    //}
 }

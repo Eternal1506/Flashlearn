@@ -27,5 +27,4 @@ void startScreen() {
 
    startX += 4;
  }
- 
 }
