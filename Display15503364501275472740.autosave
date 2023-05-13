@@ -1,4 +1,9 @@
-void mainmenu(){
+int time;
+// x = 300;
+
+color red = color(255,25,50);
+
+public void mainmenu(){
   state = "menu";
   start.setVisible(true);
   //next.setVisible(false);
@@ -21,29 +26,28 @@ void makecard(){
   //volumeLabel.setVisible(false);
 }
 void startScreen() {
- if (startX < 300) {
-  rectMode(CORNER);
-  //Text
-  background(0);
-  textAlign(CENTER);
-  fill(red);
-  textSize(100);
-  text("FlashLeArn",startX,startY);
+    rectMode(CORNER);
+    //Text
+    background(0);
+    textAlign(CENTER);
+    fill(red);
+    textSize(100);
+    text("FlashLeArn",x,y);
+    
+    //Underline
+    rect(x-260,y+20,520,25);
+    
+    //Circle around the "A" in Learn
+    noFill();
+    strokeWeight(6);
+    stroke(255,25,50);
+    circle(x+128,y-30,80);
+    
+    //Plus symbol
+    fill(red);
+    rect(x+160,y-85,1,13);
+    rect(x+154,y-80,13,1);
   
-  //Underline
-  rect(startX-260,startY+20,520,25);
-  
-  //Circle around the "A" in Learn
-  noFill();
-  strokeWeight(6);
-  stroke(255,25,50);
-  circle(startX+128,startY-30,80);
-  
-  //Plus symbol
-  fill(red);
-  rect(startX+160,startY-85,1,13);
-  rect(startX+154,startY-80,13,1);
-
-   startX += 4;
- }
+   x += 0.5;
+ 
 }

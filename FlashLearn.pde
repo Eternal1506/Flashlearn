@@ -1,3 +1,4 @@
+import g4p_controls.*;
 String state;
 boolean mainmenu = true;
 boolean drawCard = false;
@@ -20,13 +21,15 @@ void setup()
     startY = (height/4);
     frameRate(60);
     rectMode(CENTER);
+    createGUI();
     animationSpeed = (width-paddingx)/animationTime;    //Calculated Speed to be used in animation
+    mainmenu();
 }
 
 void draw(){
+
   //Initialize variables
-  if (mainmenu)
-  {
+  if (state == "menu"){
       startScreen();
   }
   if (drawCard){
