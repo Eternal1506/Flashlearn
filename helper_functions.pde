@@ -9,8 +9,14 @@ void nextcard(){ // Alogorithm to determine the order of card to be displayed (a
       cardtobechoosen.add(c);
     }
   }
-  Card newC = pickrandomcard(cardlist.get(-1), cardtobechoosen.size(), cardtobechoosen);
-  cardlist.add(newC);
+  if (cardtobechoosen.size() > 1){
+    Card newC = pickrandomcard(cardlist.get(-1), cardtobechoosen.size(), cardtobechoosen);
+    cardlist.add(newC);
+  }
+  else{
+    Card newC = pickrandomcard(cardlist.get(-1), user_Cards.size(), user_Cards);
+    cardlist.add(newC);
+  }
 } // Its done but needs to be checked
 
 Card pickrandomcard(Card c, int s, ArrayList<Card> list){ // helper function for the nextcard()

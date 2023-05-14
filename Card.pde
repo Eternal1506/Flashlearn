@@ -10,7 +10,7 @@ class Card {
   //constructor
   Card (String q, String a){
     this.question = q;
-    this.question = a;
+    this.answer = a;
   }
   
   void CheckUserAnswer(String ans){ // Function to check user answers
@@ -30,4 +30,25 @@ class Card {
     }
     this.currentprob = float(cardscore)/this.useranswers.size();
   }
+   
+  void displayCard(){
+    rectMode(CENTER);
+    textAlign(CENTER);
+    //paddingxCopy+=animationSpeed;
+    //if (paddingxCopy <= width-paddingx)
+    //{
+    //    background(255, 255, 255);
+        fill(255);
+        rect(width/2, height/2, round(width-2*paddingxCopy), round(height - paddingy));    
+        rect(width/2, paddingy+((height-2*paddingy)/4), height/2, (height-2*paddingy)/2);
+        rect(width/2, paddingy+(3*(height-2*paddingy)/4), height/2, (height-2*paddingy)/2);
+    //}
+    //else
+    //{
+        fill(0);
+        
+        text(this.question, width/2, paddingy+((height-2*paddingy)/4), height/2, (height-2*paddingy)/2);    //display the question
+        text(this.answer, width/2, paddingy+(3*(height-2*paddingy)/4), height/2, (height-2*paddingy)/2);    //display the answer
+    //}
+  } 
 }
