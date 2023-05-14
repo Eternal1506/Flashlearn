@@ -1,10 +1,10 @@
 void mainmenu(){
   state = "menu";
   start.setVisible(true);
-  //next.setVisible(false);
-  //back.setVisible(false);
-  //songSelection.setVisible(true);
-  //exit.setVisible(false);
+  next.setVisible(false);
+  previous.setVisible(false);
+  Remove.setVisible(false);
+  Add.setVisible(false);
   //backToMenu.setVisible(false);
   //volumeLabel.setVisible(false);
 }
@@ -13,10 +13,10 @@ void makecard(){
   background(255);
   state = "make";
   start.setVisible(false);
-  //next.setVisible(false);
-  //back.setVisible(false);
-  //songSelection.setVisible(true);
-  //exit.setVisible(false);
+  next.setVisible(true);
+  previous.setVisible(true);
+  Remove.setVisible(true);
+  Add.setVisible(true);
   //backToMenu.setVisible(false);
   //volumeLabel.setVisible(false);
 }

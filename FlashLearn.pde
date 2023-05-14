@@ -12,7 +12,7 @@ ArrayList<Card> cardlist = new ArrayList<Card>();
 float desiredprob = 0.7;
 int startX, startY;
 color red = color(255,25,50);
-int numcard=1;
+int numcard = 1;
 int currentcard = 0;
 
 void setup(){
@@ -37,9 +37,10 @@ void draw(){
     if( numcard > user_Cards.size()){
       int n = abs(numcard-user_Cards.size());
       for(int i = 0; i < n; i++){
-        Card c = new Card("question","answer");
+        Card c = new Card(str(numcard),"");
         user_Cards.add(c);
       }
+      println(numcard, user_Cards.size());
     }
     if (numcard != 0){
       user_Cards.get(currentcard).displayCard();
