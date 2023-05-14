@@ -53,7 +53,7 @@ void displayCard(String q, String a)
     //else
     //{
         fill(0);
-        
+        textSize(20);
         text(q, width/2, paddingy+((height-2*paddingy)/4), height/2, (height-2*paddingy)/2);    //display the question
         text(a, width/2, paddingy+(3*(height-2*paddingy)/4), height/2, (height-2*paddingy)/2);
     //}
