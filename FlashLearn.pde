@@ -32,7 +32,7 @@ void draw(){
   if (state == "menu"){
       startScreen();
   }
-  if (drawCard){
+  if (state == "make"){
       displayCard("Question", "Answer");
   }
 }
