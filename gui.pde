@@ -49,6 +49,7 @@ public void typemake_click1(GButton source, GEvent event) { //_CODE_:typemake:59
     typemake.setText("Type Answer");
   }
    typingquestion = !typingquestion;
+   typing ="";
 
     
     
