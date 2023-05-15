@@ -14,6 +14,8 @@ int startX, startY;
 color red = color(255,25,50);
 int numcard = 1;
 int currentcard = 0;
+boolean typingquestion = true;
+PFont f;
 
 void setup(){
     size(600, 600);
@@ -23,7 +25,8 @@ void setup(){
     rectMode(CENTER);
     createGUI();
     animationSpeed = (width-paddingx)/animationTime;    //Calculated Speed to be used in animation
-    mainmenu();
+    mainmenu();;
+    f = createFont("Arial",16);
 }
 
 void draw(){
@@ -37,10 +40,9 @@ void draw(){
     if( numcard > user_Cards.size()){
       int n = abs(numcard-user_Cards.size());
       for(int i = 0; i < n; i++){
-        Card c = new Card(str(numcard),"");
+        Card c = new Card("Type question","Type answer");
         user_Cards.add(c);
       }
-      println(numcard, user_Cards.size());
     }
     if (numcard != 0){
       user_Cards.get(currentcard).displayCard();

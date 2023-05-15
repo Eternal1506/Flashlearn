@@ -41,6 +41,19 @@ public void Add_click(GButton source, GEvent event) { //_CODE_:Add:490421:
   numcard += 1;
 } //_CODE_:Add:490421:
 
+public void typemake_click1(GButton source, GEvent event) { //_CODE_:typemake:595480:
+  if (typingquestion){
+    typemake.setText("Type Question");
+  }
+  else{
+    typemake.setText("Type Answer");
+  }
+   typingquestion = !typingquestion;
+
+    
+    
+} //_CODE_:typemake:595480:
+
 
 
 // Create all the GUI controls. 
@@ -50,7 +63,7 @@ public void createGUI(){
   G4P.setGlobalColorScheme(GCScheme.BLUE_SCHEME);
   G4P.setMouseOverEnabled(false);
   surface.setTitle("Sketch Window");
-  start = new GButton(this, 250, 340, 80, 30);
+  start = new GButton(this, 260, 350, 80, 30);
   start.setText("Start");
   start.addEventHandler(this, "start_click");
   next = new GButton(this, 400, 560, 80, 30);
@@ -65,6 +78,9 @@ public void createGUI(){
   Add = new GButton(this, 100, 560, 80, 30);
   Add.setText("Add Card");
   Add.addEventHandler(this, "Add_click");
+  typemake = new GButton(this, 260, 15, 80, 30);
+  typemake.setText("Type Question");
+  typemake.addEventHandler(this, "typemake_click1");
 }
 
 // Variable declarations 
@@ -74,3 +90,4 @@ GButton next;
 GButton previous; 
 GButton Remove; 
 GButton Add; 
+GButton typemake; 

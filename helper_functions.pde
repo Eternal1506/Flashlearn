@@ -26,3 +26,21 @@ Card pickrandomcard(Card c, int s, ArrayList<Card> list){ // helper function for
   }
   return list.get(r);
 }
+
+// Variable to store text currently being typed
+String typing = "";
+
+void keyPressed() {
+   //If the return key is pressed, save the String and clear it
+  if (key == '\n' ) {
+    typing = ""; 
+  } else {
+    // Otherwise, concatenate the String
+    // Each character typed by the user is added to the end of the String variable.
+    typing = typing + key; 
+    if (typingquestion)
+      user_Cards.get(currentcard).question = typing;
+    else
+      user_Cards.get(currentcard).answer = typing;
+  }
+}

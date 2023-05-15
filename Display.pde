@@ -5,7 +5,7 @@ void mainmenu(){
   previous.setVisible(false);
   Remove.setVisible(false);
   Add.setVisible(false);
-  //backToMenu.setVisible(false);
+  typemake.setVisible(false);
   //volumeLabel.setVisible(false);
 }
 
@@ -17,7 +17,7 @@ void makecard(){
   previous.setVisible(true);
   Remove.setVisible(true);
   Add.setVisible(true);
-  //backToMenu.setVisible(false);
+  typemake.setVisible(true);
   //volumeLabel.setVisible(false);
 }
 void startScreen() {
