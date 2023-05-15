@@ -21,11 +21,13 @@ public void start_click(GButton source, GEvent event) { //_CODE_:start:783324:
 public void next_click(GButton source, GEvent event) { //_CODE_:next:685857:
   if (currentcard != numcard - 1)
     currentcard += 1;
+    typing ="";
 } //_CODE_:next:685857:
 
 public void previous_click(GButton source, GEvent event) { //_CODE_:previous:940897:
   if (currentcard != 0)
     currentcard -= 1;
+    typing = "";
 } //_CODE_:previous:940897:
 
 public void Remove_click(GButton source, GEvent event) { //_CODE_:Remove:730698:
