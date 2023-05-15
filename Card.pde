@@ -34,6 +34,7 @@ class Card {
   void displayCard(){
     rectMode(CENTER);
     textAlign(CENTER);
+    textSize(25);
 
     fill(255);
     rect(width/2, height/2, round(width-2*paddingxCopy), round(height - paddingy));    
