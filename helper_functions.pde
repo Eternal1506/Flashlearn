@@ -39,7 +39,7 @@ void keyPressed() {
         user_Cards.get(currentcard).answer = user_Cards.get(currentcard).answer.substring(0, user_Cards.get(currentcard).answer.length()-1);
     }
   }
-  if (key == ENTER){
+  else if (key == ENTER){
     if (typingquestion){
       typemake.setText("Type Question");
     }
