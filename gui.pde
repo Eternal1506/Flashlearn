@@ -31,8 +31,9 @@ public void previous_click(GButton source, GEvent event) { //_CODE_:previous:940
 } //_CODE_:previous:940897:
 
 public void Remove_click(GButton source, GEvent event) { //_CODE_:Remove:730698:
-  user_Cards.remove(currentcard);
-  numcard -= 1;
+  if (numcard != 1)
+    user_Cards.remove(currentcard);
+    numcard -= 1;
   if (currentcard != 0)
     currentcard -= 1;
   else
