@@ -35,7 +35,7 @@ void draw(){
   if (state == "menu"){
      startScreen();
   }
-  if (state == "make"){
+  else if (state == "make"){
     
     if( numcard > user_Cards.size()){
       int n = abs(numcard-user_Cards.size());
@@ -47,5 +47,11 @@ void draw(){
     if (numcard != 0){
       user_Cards.get(currentcard).displayCard();
     }
+  }
+  else if ( state == "study"){
+    user_Cards.get(currentcard).displayCard();
+  }
+  else{
+    startScreen();
   }
 }

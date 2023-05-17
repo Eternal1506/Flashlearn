@@ -21,13 +21,11 @@ public void start_click(GButton source, GEvent event) { //_CODE_:start:783324:
 public void next_click(GButton source, GEvent event) { //_CODE_:next:685857:
   if (currentcard != numcard - 1)
     currentcard += 1;
-    typing ="";
 } //_CODE_:next:685857:
 
 public void previous_click(GButton source, GEvent event) { //_CODE_:previous:940897:
   if (currentcard != 0)
     currentcard -= 1;
-    typing = "";
 } //_CODE_:previous:940897:
 
 public void Remove_click(GButton source, GEvent event) { //_CODE_:Remove:730698:
@@ -52,11 +50,13 @@ public void typemake_click1(GButton source, GEvent event) { //_CODE_:typemake:59
     typemake.setText("Type Answer");
   }
    typingquestion = !typingquestion;
-   typing ="";
-
-    
-    
+ 
 } //_CODE_:typemake:595480:
+
+public void submit_click(GButton source, GEvent event) { //_CODE_:submit:709434:
+  if (state.equals("make"))
+    studycards();
+} //_CODE_:submit:709434:
 
 
 
@@ -82,9 +82,12 @@ public void createGUI(){
   Add = new GButton(this, 100, 560, 80, 30);
   Add.setText("Add Card");
   Add.addEventHandler(this, "Add_click");
-  typemake = new GButton(this, 260, 15, 80, 30);
-  typemake.setText("Type Question");
+  typemake = new GButton(this, 300, 15, 80, 30);
+  typemake.setText("Type Answer");
   typemake.addEventHandler(this, "typemake_click1");
+  submit = new GButton(this, 200, 15, 80, 30);
+  submit.setText("Submit");
+  submit.addEventHandler(this, "submit_click");
 }
 
 // Variable declarations 
@@ -95,3 +98,4 @@ GButton previous;
 GButton Remove; 
 GButton Add; 
 GButton typemake; 
+GButton submit; 

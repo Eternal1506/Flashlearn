@@ -6,7 +6,7 @@ void mainmenu(){
   Remove.setVisible(false);
   Add.setVisible(false);
   typemake.setVisible(false);
-  //volumeLabel.setVisible(false);
+  submit.setVisible(false);
 }
 
 void makecard(){
@@ -18,7 +18,20 @@ void makecard(){
   Remove.setVisible(true);
   Add.setVisible(true);
   typemake.setVisible(true);
-  //volumeLabel.setVisible(false);
+  submit.setVisible(true);
+}
+
+void studycards() {
+  background(255);
+  state = "study";
+  start.setVisible(false);
+  next.setVisible(true);
+  previous.setVisible(true);
+  Remove.setVisible(false);
+  Add.setVisible(false);
+  typemake.setVisible(false);
+  submit.setVisible(true);
+  currentcard = 0;
 }
 void startScreen() {
  if (startX < 300) {

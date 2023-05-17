@@ -32,15 +32,24 @@ String typing = "";
 
 void keyPressed() {
    //If the return key is pressed, save the String and clear it
-  if (key == '\n' ) {
-    typing = ""; 
-  } else {
+  if (key == BACKSPACE ){
+    if (typingquestion){
+      if (!user_Cards.get(currentcard).question.equals(""))
+        user_Cards.get(currentcard).question =  user_Cards.get(currentcard).question.substring(0, user_Cards.get(currentcard).question.length()-1);
+    }
+    else{
+      if (!user_Cards.get(currentcard).answer.equals(""))
+        user_Cards.get(currentcard).answer = user_Cards.get(currentcard).answer.substring(0, user_Cards.get(currentcard).answer.length()-1);
+    }
+  }
+  else {
     // Otherwise, concatenate the String
     // Each character typed by the user is added to the end of the String variable.
-    typing = typing + key; 
-    if (typingquestion)
-      user_Cards.get(currentcard).question = typing;
-    else
-      user_Cards.get(currentcard).answer = typing;
+    if (key != CODED){
+      if (typingquestion)
+        user_Cards.get(currentcard).question += key;
+      else
+        user_Cards.get(currentcard).answer += key;
+    }
   }
 }
