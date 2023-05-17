@@ -27,11 +27,8 @@ Card pickrandomcard(Card c, int s, ArrayList<Card> list){ // helper function for
   return list.get(r);
 }
 
-// Variable to store text currently being typed
-String typing = "";
-
 void keyPressed() {
-   //If the return key is pressed, save the String and clear it
+   //If the backspace key is pressed, removes the last character in the string
   if (key == BACKSPACE ){
     if (typingquestion){
       if (!user_Cards.get(currentcard).question.equals(""))
@@ -41,6 +38,15 @@ void keyPressed() {
       if (!user_Cards.get(currentcard).answer.equals(""))
         user_Cards.get(currentcard).answer = user_Cards.get(currentcard).answer.substring(0, user_Cards.get(currentcard).answer.length()-1);
     }
+  }
+  if (key == ENTER){
+    if (typingquestion){
+      typemake.setText("Type Question");
+    }
+    else{
+      typemake.setText("Type Answer");
+    }
+     typingquestion = !typingquestion;
   }
   else {
     // Otherwise, concatenate the String
