@@ -42,9 +42,11 @@ void draw(){
       for(int i = 0; i < n; i++){
         Card c = new Card("Type question","Type answer");
         user_Cards.add(c);
+        paddingxCopy = paddingx;
       }
     }
     if (numcard != 0){
+      background(255);
       user_Cards.get(currentcard).displayCard();
     }
   }

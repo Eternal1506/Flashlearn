@@ -35,7 +35,9 @@ class Card {
     rectMode(CENTER);
     textAlign(CENTER);
     textSize(25);
-
+    if (paddingxCopy <= width - paddingx)
+      paddingxCopy++;
+    strokeWeight(3);
     fill(255);
     rect(width/2, height/2, round(width-2*paddingxCopy), round(height - paddingy));    
     rect(width/2, paddingy+((height-2*paddingy)/4), height/2, (height-2*paddingy)/2);
