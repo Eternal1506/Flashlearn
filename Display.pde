@@ -60,3 +60,17 @@ void startScreen() {
    startX += 4;
  }
 }
+
+void ratingscreen(int rate) {
+    if (rate <= 60){
+        background(252, 244, 3);
+    }
+    else if (rate <= 80){
+        background(3, 223, 252);
+    }
+    else{
+        background(40, 252, 3);
+    }
+    rectMode(CORNER);
+    textAlign(CENTER);
+}
