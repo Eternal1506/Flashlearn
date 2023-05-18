@@ -68,15 +68,18 @@ void startScreen() {
 }
 
 void ratingscreen(int rate) {
+    rectMode(CORNER);
+    textAlign(CENTER);
     if (rate <= 60){
         background(252, 244, 3);
+        text("You Suck!", width/2, 2 * height/3, width/2, 100);
     }
     else if (rate <= 80){
         background(3, 223, 252);
+        text("Average....", width/2, 2 * height/3, width/2, 100);
     }
     else{
         background(40, 252, 3);
+        text("That's prety good :)", width/2, 2 * height/3, width/2, 100);
     }
-    rectMode(CORNER);
-    textAlign(CENTER);
 }
