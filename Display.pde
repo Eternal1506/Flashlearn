@@ -9,6 +9,8 @@ void mainmenu(){
   submit.setVisible(false);
   diff_time.setVisible(false);
   difficulty.setVisible(false);
+  easy.setVisible(false);
+  hard.setVisible(false);
 }
 
 void makecard(){
@@ -23,6 +25,8 @@ void makecard(){
   submit.setVisible(true);
   diff_time.setVisible(true);
   difficulty.setVisible(true);
+  easy.setVisible(true);
+  hard.setVisible(true);
 }
 
 void studycards() {
@@ -38,6 +42,8 @@ void studycards() {
   diff_time.setVisible(false);
   difficulty.setVisible(false);
   currentcard = 0;
+  easy.setVisible(false);
+  hard.setVisible(false);
 }
 void startScreen() {
  if (startX < 300) {

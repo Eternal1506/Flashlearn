@@ -26,7 +26,7 @@ void setup(){
     createGUI();
     animationSpeed = (width-paddingx)/animationTime;    //Calculated Speed to be used in animation
     mainmenu();;
-    f = createFont("Arial",16);
+    f = createFont("Arial",25);
 }
 
 void draw(){

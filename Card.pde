@@ -11,6 +11,7 @@ class Card {
   Card (String q, String a){
     this.question = q;
     this.answer = a;
+    this.timer = 30;
   }
   
   void CheckUserAnswer(String ans){ // Function to check user answers
@@ -34,7 +35,8 @@ class Card {
   void displayCard(){
     rectMode(CENTER);
     textAlign(CENTER);
-    textSize(25);
+    textFont(f);
+    
     //if (paddingxCopy <= width - paddingx)
     //  paddingxCopy++;
     strokeWeight(3);

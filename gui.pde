@@ -100,13 +100,21 @@ public void createGUI(){
   difficulty.setText("Difficulty of quesiton");
   difficulty.setOpaque(false);
   diff_time = new GSlider(this, 120, 10, 100, 40, 10.0);
-  diff_time.setLimits(20.0, 20.0, 30.0);
+  diff_time.setLimits(30.0, 20.0, 30.0);
   diff_time.setNbrTicks(3);
   diff_time.setStickToTicks(true);
   diff_time.setShowTicks(true);
   diff_time.setNumberFormat(G4P.DECIMAL, 0);
   diff_time.setOpaque(false);
   diff_time.addEventHandler(this, "diff_time_change");
+  hard = new GLabel(this, 100, 35, 50, 20);
+  hard.setTextAlign(GAlign.CENTER, GAlign.MIDDLE);
+  hard.setText("Hard");
+  hard.setOpaque(false);
+  easy = new GLabel(this, 190, 35, 50, 20);
+  easy.setTextAlign(GAlign.CENTER, GAlign.MIDDLE);
+  easy.setText("Easy");
+  easy.setOpaque(false);
 }
 
 // Variable declarations 
@@ -120,3 +128,5 @@ GButton typemake;
 GButton submit; 
 GLabel difficulty; 
 GSlider diff_time; 
+GLabel hard; 
+GLabel easy; 
