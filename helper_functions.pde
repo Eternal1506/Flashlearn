@@ -59,3 +59,12 @@ void keyPressed() {
     }
   }
 }
+
+void userRating() {
+  ArrayList<Card> userCardAnswers = new ArrayList<Card>();
+  
+  for (int i; i < user_Cards.length; i++) {
+    
+  }
+  
+}
