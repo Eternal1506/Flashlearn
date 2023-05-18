@@ -21,17 +21,20 @@ public void start_click(GButton source, GEvent event) { //_CODE_:start:783324:
 public void next_click(GButton source, GEvent event) { //_CODE_:next:685857:
   if (currentcard != numcard - 1)
     currentcard += 1;
+  diff_time.setValue(user_Cards.get(currentcard).timer);
 } //_CODE_:next:685857:
 
 public void previous_click(GButton source, GEvent event) { //_CODE_:previous:940897:
   if (currentcard != 0)
     currentcard -= 1;
+  diff_time.setValue(user_Cards.get(currentcard).timer);
 } //_CODE_:previous:940897:
 
 public void Remove_click(GButton source, GEvent event) { //_CODE_:Remove:730698:
-  if (numcard != 1)
+  if (numcard != 1){
     user_Cards.remove(currentcard);
     numcard -= 1;
+  }
   if (currentcard != 0)
     currentcard -= 1;
   else
@@ -58,6 +61,10 @@ public void submit_click(GButton source, GEvent event) { //_CODE_:submit:709434:
     studycards();
 } //_CODE_:submit:709434:
 
+public void diff_time_change(GSlider source, GEvent event) { //_CODE_:diff_time:358574:
+  user_Cards.get(currentcard).timer = diff_time.getValueF();
+} //_CODE_:diff_time:358574:
+
 
 
 // Create all the GUI controls. 
@@ -70,24 +77,36 @@ public void createGUI(){
   start = new GButton(this, 260, 350, 80, 30);
   start.setText("Start");
   start.addEventHandler(this, "start_click");
-  next = new GButton(this, 400, 560, 80, 30);
+  next = new GButton(this, 500, 560, 80, 30);
   next.setText("Next");
   next.addEventHandler(this, "next_click");
-  previous = new GButton(this, 300, 560, 80, 30);
+  previous = new GButton(this, 20, 560, 80, 30);
   previous.setText("Previous");
   previous.addEventHandler(this, "previous_click");
-  Remove = new GButton(this, 200, 560, 80, 30);
+  Remove = new GButton(this, 260, 560, 80, 30);
   Remove.setText("Remove Card");
   Remove.addEventHandler(this, "Remove_click");
-  Add = new GButton(this, 100, 560, 80, 30);
+  Add = new GButton(this, 140, 560, 80, 30);
   Add.setText("Add Card");
   Add.addEventHandler(this, "Add_click");
-  typemake = new GButton(this, 300, 15, 80, 30);
-  typemake.setText("Type Answer");
+  typemake = new GButton(this, 380, 560, 80, 30);
+  typemake.setText("Type Question");
   typemake.addEventHandler(this, "typemake_click1");
-  submit = new GButton(this, 200, 15, 80, 30);
+  submit = new GButton(this, 500, 10, 80, 30);
   submit.setText("Submit");
   submit.addEventHandler(this, "submit_click");
+  difficulty = new GLabel(this, 20, 15, 80, 30);
+  difficulty.setTextAlign(GAlign.CENTER, GAlign.MIDDLE);
+  difficulty.setText("Difficulty of quesiton");
+  difficulty.setOpaque(false);
+  diff_time = new GSlider(this, 120, 10, 100, 40, 10.0);
+  diff_time.setLimits(20.0, 20.0, 30.0);
+  diff_time.setNbrTicks(3);
+  diff_time.setStickToTicks(true);
+  diff_time.setShowTicks(true);
+  diff_time.setNumberFormat(G4P.DECIMAL, 0);
+  diff_time.setOpaque(false);
+  diff_time.addEventHandler(this, "diff_time_change");
 }
 
 // Variable declarations 
@@ -99,3 +118,5 @@ GButton Remove;
 GButton Add; 
 GButton typemake; 
 GButton submit; 
+GLabel difficulty; 
+GSlider diff_time; 

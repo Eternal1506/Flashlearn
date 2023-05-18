@@ -7,6 +7,8 @@ void mainmenu(){
   Add.setVisible(false);
   typemake.setVisible(false);
   submit.setVisible(false);
+  diff_time.setVisible(false);
+  difficulty.setVisible(false);
 }
 
 void makecard(){
@@ -19,6 +21,8 @@ void makecard(){
   Add.setVisible(true);
   typemake.setVisible(true);
   submit.setVisible(true);
+  diff_time.setVisible(true);
+  difficulty.setVisible(true);
 }
 
 void studycards() {
@@ -31,6 +35,8 @@ void studycards() {
   Add.setVisible(false);
   typemake.setVisible(false);
   submit.setVisible(true);
+  diff_time.setVisible(false);
+  difficulty.setVisible(false);
   currentcard = 0;
 }
 void startScreen() {
