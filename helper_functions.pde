@@ -52,10 +52,16 @@ void keyPressed() {
     // Otherwise, concatenate the String
     // Each character typed by the user is added to the end of the String variable.
     if (key != CODED){
-      if (typingquestion)
+      if (typingquestion){
+        if (user_Cards.get(currentcard).question.equals("Type question"))
+          user_Cards.get(currentcard).question = "";
         user_Cards.get(currentcard).question += key;
-      else
+      }
+      else{
+        if (user_Cards.get(currentcard).answer.equals("Type answer"))
+          user_Cards.get(currentcard).answer = "";
         user_Cards.get(currentcard).answer += key;
+      }
     }
   }
 }
