@@ -90,7 +90,7 @@ public void createGUI(){
   Add.setText("Add Card");
   Add.addEventHandler(this, "Add_click");
   typemake = new GButton(this, 380, 560, 80, 30);
-  typemake.setText("Type Question");
+  typemake.setText("Type Answer");
   typemake.addEventHandler(this, "typemake_click1");
   submit = new GButton(this, 500, 10, 80, 30);
   submit.setText("Submit");
