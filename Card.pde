@@ -12,6 +12,7 @@ class Card {
     this.question = q;
     this.answer = a;
     this.timer = 30;
+    this.useranswers = new IntList();
   }
   
   void CheckUserAnswer(String ans){ // Function to check user answers
@@ -51,13 +52,21 @@ class Card {
       fill(0);
         
     text(this.question, width/2, paddingy+((height-2*paddingy)/4), height/2, (height-2*paddingy)/2);    //display the question
-    
-    if (!typingquestion)
-      fill(0,0,200);
-    else
+    if (state == "make"){
+      if (!typingquestion)
+        fill(0,0,200);
+      else
+        fill(0);
+    }
+    else{
       fill(0);
-      
-    text(this.answer, width/2, paddingy+(3*(height-2*paddingy)/4), height/2, (height-2*paddingy)/2);    //display the answer
+    }
+    if (state != "quiz"){
+      text(this.answer, width/2, paddingy+(3*(height-2*paddingy)/4), height/2, (height-2*paddingy)/2);    //display the answer
+    }
+    else{
+      text(user_answer, width/2, paddingy+(3*(height-2*paddingy)/4), height/2, (height-2*paddingy)/2);
+    }
 
-  } 
+  }
 }

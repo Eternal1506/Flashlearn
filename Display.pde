@@ -45,6 +45,22 @@ void studycards() {
   easy.setVisible(false);
   hard.setVisible(false);
 }
+void startquiz(){
+  state = "quiz";
+  start.setVisible(false);
+  next.setVisible(true);
+  previous.setVisible(true);
+  Remove.setVisible(false);
+  Add.setVisible(false);
+  typemake.setVisible(false);
+  submit.setVisible(true);
+  diff_time.setVisible(false);
+  difficulty.setVisible(false);
+  currentcard = 0;
+  easy.setVisible(false);
+  hard.setVisible(false);
+  randomizelist(user_Cards, cardlist);
+}
 void startScreen() {
  if (startX < 300) {
   rectMode(CORNER);

@@ -1,21 +1,22 @@
 import g4p_controls.*;
 String state;
+String user_answer = "Type Answer";
 boolean mainmenu = true;
 boolean drawCard = false;
+boolean typingquestion = true;
 ArrayList<Card> user_Cards = new ArrayList<Card>();    //ArrayList of all cards from user
+ArrayList<Card> cardlist = new ArrayList<Card>();
 float animationTime = 5;
 float animationSpeed;    //time (in seconds) the animation takes
 float paddingx =50;
 float paddingy = 100;
 float paddingxCopy = paddingx;
-ArrayList<Card> cardlist = new ArrayList<Card>();
 float desiredprob = 0.7;
 int startX, startY;
-color red = color(255,25,50);
 int numcard = 1;
 int currentcard = 0;
-boolean typingquestion = true;
 PFont f;
+color red = color(255,25,50);
 
 void setup(){
     size(600, 600);
@@ -52,6 +53,9 @@ void draw(){
   }
   else if ( state == "study"){
     user_Cards.get(currentcard).displayCard();
+  }
+  else if ( state ==  "quiz"){
+    cardlist.get(currentcard).displayCard();
   }
   else{
     startScreen();

@@ -59,6 +59,12 @@ public void typemake_click1(GButton source, GEvent event) { //_CODE_:typemake:59
 public void submit_click(GButton source, GEvent event) { //_CODE_:submit:709434:
   if (state.equals("make"))
     studycards();
+    
+  else if (state.equals("study"))
+    startquiz();
+    
+  //else if(state.equals("quiz"))
+    
 } //_CODE_:submit:709434:
 
 public void diff_time_change(GSlider source, GEvent event) { //_CODE_:diff_time:358574:

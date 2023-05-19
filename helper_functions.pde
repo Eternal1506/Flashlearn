@@ -81,3 +81,15 @@ int userRating() {
   int rating = correct/total * 100;
   return rating;
 }
+
+IntList index;
+void randomizelist(ArrayList<Card> c1, ArrayList<Card> c2 ){
+   index = new IntList();
+  for( int i = 0; i < c1.size(); i++){
+    index.append(i);
+  }
+  index.shuffle();
+  for (int i = 0; i < c1.size(); i++){
+    c2.add(c1.get(index.get(i)));
+  }
+}
