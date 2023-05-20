@@ -71,6 +71,19 @@ public void diff_time_change(GSlider source, GEvent event) { //_CODE_:diff_time:
   user_Cards.get(currentcard).timer = diff_time.getValueF();
 } //_CODE_:diff_time:358574:
 
+public void check_click(GButton source, GEvent event) { //_CODE_:check:467746:
+  cardlist.get(currentcard).CheckUserAnswer(user_answer);
+  abletotype = false;
+  if (cardlist.get(currentcard).answer.equals(user_answer)){
+    background(0,255,0);
+  }
+  else{
+    background(255,0,0);
+    user_answer = "Correct answer: " + cardlist.get(currentcard).answer;
+  }
+    
+} //_CODE_:check:467746:
+
 
 
 // Create all the GUI controls. 
@@ -121,6 +134,9 @@ public void createGUI(){
   easy.setTextAlign(GAlign.CENTER, GAlign.MIDDLE);
   easy.setText("Easy");
   easy.setOpaque(false);
+  check = new GButton(this, 260, 560, 80, 30);
+  check.setText("Check");
+  check.addEventHandler(this, "check_click");
 }
 
 // Variable declarations 
@@ -136,3 +152,4 @@ GLabel difficulty;
 GSlider diff_time; 
 GLabel hard; 
 GLabel easy; 
+GButton check; 

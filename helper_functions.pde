@@ -29,38 +29,56 @@ Card pickrandomcard(Card c, int s, ArrayList<Card> list){ // helper function for
 
 void keyPressed() {
    //If the backspace key is pressed, removes the last character in the string
-  if (key == BACKSPACE ){
-    if (typingquestion){
-      if (!user_Cards.get(currentcard).question.equals(""))
-        user_Cards.get(currentcard).question =  user_Cards.get(currentcard).question.substring(0, user_Cards.get(currentcard).question.length()-1);
-    }
-    else{
-      if (!user_Cards.get(currentcard).answer.equals(""))
-        user_Cards.get(currentcard).answer = user_Cards.get(currentcard).answer.substring(0, user_Cards.get(currentcard).answer.length()-1);
-    }
-  }
-  else if (key == ENTER){
-    if (typingquestion){
-      typemake.setText("Type Question");
-    }
-    else{
-      typemake.setText("Type Answer");
-    }
-     typingquestion = !typingquestion;
-  }
-  else {
-    // Otherwise, concatenate the String
-    // Each character typed by the user is added to the end of the String variable.
-    if (key != CODED){
+  if (state == "make"){
+    if (key == BACKSPACE ){
       if (typingquestion){
-        if (user_Cards.get(currentcard).question.equals("Type question"))
-          user_Cards.get(currentcard).question = "";
-        user_Cards.get(currentcard).question += key;
+        if (!user_Cards.get(currentcard).question.equals(""))
+          user_Cards.get(currentcard).question =  user_Cards.get(currentcard).question.substring(0, user_Cards.get(currentcard).question.length()-1);
       }
       else{
-        if (user_Cards.get(currentcard).answer.equals("Type answer"))
-          user_Cards.get(currentcard).answer = "";
-        user_Cards.get(currentcard).answer += key;
+        if (!user_Cards.get(currentcard).answer.equals(""))
+          user_Cards.get(currentcard).answer = user_Cards.get(currentcard).answer.substring(0, user_Cards.get(currentcard).answer.length()-1);
+      }
+    }
+    else if (key == ENTER){
+      if (typingquestion){
+        typemake.setText("Type Question");
+      }
+      else{
+        typemake.setText("Type Answer");
+      }
+       typingquestion = !typingquestion;
+    }
+    else {
+      // Otherwise, concatenate the String
+      // Each character typed by the user is added to the end of the String variable.
+      if (state == "make"){
+        if (key != CODED){
+          if (typingquestion){
+            if (user_Cards.get(currentcard).question.equals("Type question"))
+              user_Cards.get(currentcard).question = "";
+            user_Cards.get(currentcard).question += key;
+          }
+          else{
+            if (user_Cards.get(currentcard).answer.equals("Type answer"))
+              user_Cards.get(currentcard).answer = "";
+            user_Cards.get(currentcard).answer += key;
+          }
+        }
+      }
+    }
+  }
+  else if (state == "quiz"){
+    if (key == BACKSPACE ){
+        if (!user_answer.equals("") && abletotype)
+          user_answer =  user_answer.substring(0, user_answer.length()-1);
+    }
+    else {
+      if (key != CODED){
+        if (user_answer.equals("Type answer"))
+          user_answer = "";
+        if (abletotype)
+          user_answer += key;
       }
     }
   }

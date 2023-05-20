@@ -1,9 +1,10 @@
 import g4p_controls.*;
 String state;
-String user_answer = "Type Answer";
+String user_answer = "Type answer";
 boolean mainmenu = true;
 boolean drawCard = false;
 boolean typingquestion = true;
+boolean abletotype = true;
 ArrayList<Card> user_Cards = new ArrayList<Card>();    //ArrayList of all cards from user
 ArrayList<Card> cardlist = new ArrayList<Card>();
 float animationTime = 5;

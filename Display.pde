@@ -11,6 +11,7 @@ void mainmenu(){
   difficulty.setVisible(false);
   easy.setVisible(false);
   hard.setVisible(false);
+  check.setVisible(false);
 }
 
 void makecard(){
@@ -27,6 +28,7 @@ void makecard(){
   difficulty.setVisible(true);
   easy.setVisible(true);
   hard.setVisible(true);
+  check.setVisible(false);
 }
 
 void studycards() {
@@ -44,6 +46,7 @@ void studycards() {
   currentcard = 0;
   easy.setVisible(false);
   hard.setVisible(false);
+  check.setVisible(false);
 }
 void startquiz(){
   state = "quiz";
@@ -59,7 +62,10 @@ void startquiz(){
   currentcard = 0;
   easy.setVisible(false);
   hard.setVisible(false);
-  randomizelist(user_Cards, cardlist);
+  check.setVisible(true);
+  for (int i = 0; i < 3; i++){
+    randomizelist(user_Cards, cardlist);
+  }
 }
 void startScreen() {
  if (startX < 300) {
