@@ -4,7 +4,7 @@ class Card {
   String question;
   String answer;
   IntList useranswers;
-  float timer;
+  int timer;
   float currentprob;
   
   //constructor
@@ -45,11 +45,15 @@ class Card {
     rect(width/2, height/2, round(width-2*paddingxCopy), round(height - paddingy));    
     rect(width/2, paddingy+((height-2*paddingy)/4), height/2, (height-2*paddingy)/2);
     rect(width/2, paddingy+(3*(height-2*paddingy)/4), height/2, (height-2*paddingy)/2);
-
+    if (state == "make"){
     if (typingquestion)
       fill(0,0,200);
     else
       fill(0);
+    }
+    else {
+      fill(0);
+    }
         
     text(this.question, width/2, paddingy+((height-2*paddingy)/4), height/2, (height-2*paddingy)/2);    //display the question
     if (state == "make"){

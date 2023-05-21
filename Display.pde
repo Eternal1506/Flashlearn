@@ -51,8 +51,8 @@ void studycards() {
 void startquiz(){
   state = "quiz";
   start.setVisible(false);
-  next.setVisible(true);
-  previous.setVisible(true);
+  next.setVisible(false);
+  previous.setVisible(false);
   Remove.setVisible(false);
   Add.setVisible(false);
   typemake.setVisible(false);
@@ -63,9 +63,8 @@ void startquiz(){
   easy.setVisible(false);
   hard.setVisible(false);
   check.setVisible(true);
-  for (int i = 0; i < 3; i++){
-    randomizelist(user_Cards, cardlist);
-  }
+  randomizelist(user_Cards, cardlist);
+
 }
 void startScreen() {
  if (startX < 300) {
@@ -95,16 +94,32 @@ void startScreen() {
  }
 }
 
+void showrating(){
+  state = "rate";
+  start.setVisible(false);
+  next.setVisible(false);
+  previous.setVisible(false);
+  Remove.setVisible(false);
+  Add.setVisible(false);
+  typemake.setVisible(false);
+  submit.setVisible(false);
+  diff_time.setVisible(false);
+  difficulty.setVisible(false);
+  easy.setVisible(false);
+  hard.setVisible(false);
+  check.setVisible(false);
+}
+
 void ratingscreen(int rate) {
     rectMode(CORNER);
     textAlign(CENTER);
-    if (rate <= 60){
+    if (rate <= 80 && rate > 60){
+      background(3, 223, 252);
+      text("Average....", width/2, 2 * height/3, width/2, 100);
+    }
+    else if (rate <= 60){
         background(252, 244, 3);
         text("You Suck!", width/2, 2 * height/3, width/2, 100);
-    }
-    else if (rate <= 80){
-        background(3, 223, 252);
-        text("Average....", width/2, 2 * height/3, width/2, 100);
     }
     else{
         background(40, 252, 3);

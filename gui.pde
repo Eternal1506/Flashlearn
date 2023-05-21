@@ -19,14 +19,35 @@ public void start_click(GButton source, GEvent event) { //_CODE_:start:783324:
 } //_CODE_:start:783324:
 
 public void next_click(GButton source, GEvent event) { //_CODE_:next:685857:
-  if (currentcard != numcard - 1)
-    currentcard += 1;
-  diff_time.setValue(user_Cards.get(currentcard).timer);
+  if (state == "make"){
+    if (currentcard != numcard - 1){
+      currentcard += 1;
+      typingquestion = true;
+    }
+    diff_time.setValue(user_Cards.get(currentcard).timer);
+  }
+  else if (state == "study"){
+    if (currentcard != numcard - 1)
+      currentcard += 1;
+  }
+  else if (state == "quiz") {
+    if (currentcard != cardlist.size() - 1)
+      currentcard += 1;
+    next.setVisible(false);
+    countDownStart = cardlist.get(currentcard).timer;
+    timerStart = int(millis()/1000);
+    countDown  = countDownStart;
+    runtimer = true;
+    abletotype = true;
+    user_answer = "Type Answer";
+  }
 } //_CODE_:next:685857:
 
 public void previous_click(GButton source, GEvent event) { //_CODE_:previous:940897:
-  if (currentcard != 0)
+  if (currentcard != 0){
+    typingquestion = true;
     currentcard -= 1;
+  }
   diff_time.setValue(user_Cards.get(currentcard).timer);
 } //_CODE_:previous:940897:
 
@@ -60,27 +81,28 @@ public void submit_click(GButton source, GEvent event) { //_CODE_:submit:709434:
   if (state.equals("make"))
     studycards();
     
-  else if (state.equals("study"))
+  else if (state.equals("study")){
     startquiz();
+    timerStart = int(millis()/1000);
+    countDown  = countDownStart;
+    submit.setText("Exit");
+  }
+  
+  else if (state.equals("quiz")){
+    showrating();
+  }
     
-  //else if(state.equals("quiz"))
     
 } //_CODE_:submit:709434:
 
 public void diff_time_change(GSlider source, GEvent event) { //_CODE_:diff_time:358574:
-  user_Cards.get(currentcard).timer = diff_time.getValueF();
+  user_Cards.get(currentcard).timer = diff_time.getValueI();
 } //_CODE_:diff_time:358574:
 
 public void check_click(GButton source, GEvent event) { //_CODE_:check:467746:
-  cardlist.get(currentcard).CheckUserAnswer(user_answer);
-  abletotype = false;
-  if (cardlist.get(currentcard).answer.equals(user_answer)){
-    background(0,255,0);
-  }
-  else{
-    background(255,0,0);
-    user_answer = "Correct answer: " + cardlist.get(currentcard).answer;
-  }
+  runtimer = false;
+  checkanswer();
+  next.setVisible(true);
     
 } //_CODE_:check:467746:
 
@@ -119,11 +141,11 @@ public void createGUI(){
   difficulty.setText("Difficulty of quesiton");
   difficulty.setOpaque(false);
   diff_time = new GSlider(this, 120, 10, 100, 40, 10.0);
-  diff_time.setLimits(30.0, 20.0, 30.0);
+  diff_time.setLimits(30, 20, 30);
   diff_time.setNbrTicks(3);
   diff_time.setStickToTicks(true);
   diff_time.setShowTicks(true);
-  diff_time.setNumberFormat(G4P.DECIMAL, 0);
+  diff_time.setNumberFormat(G4P.INTEGER, 0);
   diff_time.setOpaque(false);
   diff_time.addEventHandler(this, "diff_time_change");
   hard = new GLabel(this, 100, 35, 50, 20);

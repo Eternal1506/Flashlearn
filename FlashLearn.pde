@@ -1,12 +1,15 @@
 import g4p_controls.*;
 String state;
-String user_answer = "Type answer";
+String user_answer = "Type Answer";
 boolean mainmenu = true;
 boolean drawCard = false;
 boolean typingquestion = true;
 boolean abletotype = true;
+boolean runtimer = true;
 ArrayList<Card> user_Cards = new ArrayList<Card>();    //ArrayList of all cards from user
 ArrayList<Card> cardlist = new ArrayList<Card>();
+ArrayList<Card> cardbel = new ArrayList<Card>();
+ArrayList<Card> cardabv = new ArrayList<Card>();
 float animationTime = 5;
 float animationSpeed;    //time (in seconds) the animation takes
 float paddingx =50;
@@ -18,6 +21,10 @@ int numcard = 1;
 int currentcard = 0;
 PFont f;
 color red = color(255,25,50);
+int timer = 0;
+int timerStart = 0;
+int countDown;
+int countDownStart = 20;
 
 void setup(){
     size(600, 600);
@@ -32,6 +39,7 @@ void setup(){
 }
 
 void draw(){
+  background(255);
 
   //Initialize variables
   if (state == "menu"){
@@ -57,6 +65,21 @@ void draw(){
   }
   else if ( state ==  "quiz"){
     cardlist.get(currentcard).displayCard();
+    countDownStart = cardlist.get(currentcard).timer;
+    if (runtimer){
+      timer();
+    }
+    else{
+      text ("Time left: " + countDown ,300,35);
+      checkanswer();
+    }
+    if (currentcard == cardlist.size()-1){
+      nextcard();
+    }
+  }
+  else if (state == "rate"){
+    int r = userRating();
+    ratingscreen(r);
   }
   else{
     startScreen();

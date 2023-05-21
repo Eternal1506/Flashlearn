@@ -1,30 +1,47 @@
 void nextcard(){ // Alogorithm to determine the order of card to be displayed (adaptive learning funcition) 
   float desiredprob = 0.7;
 
-  ArrayList<Card> cardtobechoosen = new ArrayList<Card>();
+  cardbel = new ArrayList<Card>();
+  cardabv = new ArrayList<Card>();
 
-  for (Card c : cardlist){ 
+  for (Card c : user_Cards){ 
     c.Correctanswerprob();
     if (c.currentprob < desiredprob){
-      cardtobechoosen.add(c);
+      cardbel.add(c);
+    }
+    else{
+      cardabv.add(c);
     }
   }
-  if (cardtobechoosen.size() > 1){
-    Card newC = pickrandomcard(cardlist.get(-1), cardtobechoosen.size(), cardtobechoosen);
-    cardlist.add(newC);
+  float ran = random(0,1);
+  if (ran > 0.3){
+    
+    if (cardbel.size() > 1){
+      Card newC = pickrandomcard(cardlist.get(cardlist.size()-1), cardbel.size(), cardbel);
+      cardlist.add(newC);
+    }
+    else{
+      Card newC = pickrandomcard(cardlist.get(cardlist.size()-1), user_Cards.size(), user_Cards);
+      cardlist.add(newC);
+    }
   }
-  else{
-    Card newC = pickrandomcard(cardlist.get(-1), user_Cards.size(), user_Cards);
+  else {
+    Card newC = pickrandomcard(cardlist.get(cardlist.size()-1), cardabv.size(), cardabv);
     cardlist.add(newC);
   }
 } // Its done but needs to be checked
 
 Card pickrandomcard(Card c, int s, ArrayList<Card> list){ // helper function for the nextcard()
-  int r = int(random(s + 1));
-  while (c.question.equals( list.get(r).question)){
-    r = int(random(s + 1));
+  int r = int(random(s));
+  int n = 0;
+  while (c.question.equals(list.get(r).question) && n < 100){
+    r = int(random(s));
+    n++;
   }
-  return list.get(r);
+  if (n >= 100)
+    return user_Cards.get(r);
+  else
+    return list.get(r);
 }
 
 void keyPressed() {
@@ -73,9 +90,14 @@ void keyPressed() {
         if (!user_answer.equals("") && abletotype)
           user_answer =  user_answer.substring(0, user_answer.length()-1);
     }
+    else if( key == ENTER){
+      runtimer = false;
+      checkanswer();
+      next.setVisible(true);
+    }
     else {
       if (key != CODED){
-        if (user_answer.equals("Type answer"))
+        if (user_answer.equals("Type Answer"))
           user_answer = "";
         if (abletotype)
           user_answer += key;
@@ -110,4 +132,29 @@ void randomizelist(ArrayList<Card> c1, ArrayList<Card> c2 ){
   for (int i = 0; i < c1.size(); i++){
     c2.add(c1.get(index.get(i)));
   }
+}
+void timer(){
+  timer = int(millis()/ 1000 - timerStart);     // counts up from the start time (0)
+  countDown = int (countDownStart - timer);
+  text ("Time left: " + countDown ,300,35);
+  if (countDown == 0){
+    runtimer = false;
+    checkanswer();
+    next.setVisible(true);
+  }
+}
+void checkanswer(){
+  
+  cardlist.get(currentcard).CheckUserAnswer(user_answer);
+  abletotype = false;
+  if (cardlist.get(currentcard).answer.equals(user_answer)){
+    background(0,255,0);
+    cardlist.get(currentcard).displayCard();
+  }
+  else{
+    background(255,0,0);
+    user_answer = "Correct answer: " + cardlist.get(currentcard).answer;
+    cardlist.get(currentcard).displayCard();
+  }
+  
 }
