@@ -26,8 +26,14 @@ void nextcard(){ // Alogorithm to determine the order of card to be displayed (a
     }
   }
   else {
-    Card newC = pickrandomcard(cardlist.get(cardlist.size()-1), cardabv.size(), cardabv);
-    cardlist.add(newC);
+    if (cardabv.size() > 1){
+      Card newC = pickrandomcard(cardlist.get(cardlist.size()-1), cardabv.size(), cardabv);
+      cardlist.add(newC);
+    }
+    else{
+      Card newC = pickrandomcard(cardlist.get(cardlist.size()-1), user_Cards.size(), user_Cards);
+      cardlist.add(newC);
+    }
   }
 } // Its done but needs to be checked
 
