@@ -34,6 +34,7 @@ public void next_click(GButton source, GEvent event) { //_CODE_:next:685857:
     if (currentcard != cardlist.size() - 1)
       currentcard += 1;
     next.setVisible(false);
+    check.setVisible(true);
     countDownStart = cardlist.get(currentcard).timer;
     timerStart = int(millis()/1000);
     countDown  = countDownStart;
@@ -78,6 +79,7 @@ public void typemake_click1(GButton source, GEvent event) { //_CODE_:typemake:59
 } //_CODE_:typemake:595480:
 
 public void submit_click(GButton source, GEvent event) { //_CODE_:submit:709434:
+  background(255);
   if (state.equals("make"))
     studycards();
     
@@ -103,6 +105,7 @@ public void check_click(GButton source, GEvent event) { //_CODE_:check:467746:
   runtimer = false;
   checkanswer();
   next.setVisible(true);
+  check.setVisible(false);
     
 } //_CODE_:check:467746:
 

@@ -39,7 +39,6 @@ void setup(){
 }
 
 void draw(){
-  background(255);
 
   //Initialize variables
   if (state == "menu"){
@@ -64,15 +63,14 @@ void draw(){
     user_Cards.get(currentcard).displayCard();
   }
   else if ( state ==  "quiz"){
+    if (abletotype)
+      background(255);
     cardlist.get(currentcard).displayCard();
     countDownStart = cardlist.get(currentcard).timer;
     if (runtimer){
       timer();
     }
-    else{
-      text ("Time left: " + countDown ,300,35);
-      checkanswer();
-    }
+    
     if (currentcard == cardlist.size()-1){
       nextcard();
     }
