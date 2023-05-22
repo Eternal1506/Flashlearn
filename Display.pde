@@ -111,18 +111,21 @@ void showrating(){
 }
 
 void ratingscreen(int rate) {
-    rectMode(CORNER);
+    rectMode(CENTER);
     textAlign(CENTER);
     if (rate <= 80 && rate > 60){
       background(3, 223, 252);
+      text("You got " + rate + "% of questions right", width/2, height/2, width/2, 100);
       text("Average....", width/2, 2 * height/3, width/2, 100);
     }
     else if (rate <= 60){
         background(252, 244, 3);
+        text("You got " + rate + "% of questions right", width/2, height/2, width/2, 100);
         text("You Suck!", width/2, 2 * height/3, width/2, 100);
     }
     else{
         background(40, 252, 3);
-        text("That's prety good :)", width/2, 2 * height/3, width/2, 100);
+        text("You got " + rate + "% of questions right", width/2, height/2, width/2, 100);
+        text("That's pretty good :)", width/2, 2 * height/3, width/2, 100);
     }
 }
