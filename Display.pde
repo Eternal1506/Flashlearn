@@ -56,7 +56,7 @@ void startquiz(){
   Remove.setVisible(false);
   Add.setVisible(false);
   typemake.setVisible(false);
-  submit.setVisible(true);
+  submit.setVisible(false);
   diff_time.setVisible(false);
   difficulty.setVisible(false);
   currentcard = 0;

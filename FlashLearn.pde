@@ -1,6 +1,6 @@
 import g4p_controls.*;
 String state;
-String user_answer = "Type Answer";
+String user_answer = "Type answer";
 boolean mainmenu = true;
 boolean drawCard = false;
 boolean typingquestion = true;
@@ -27,15 +27,15 @@ int countDown;
 int countDownStart = 20;
 
 void setup(){
-    size(600, 600);
-    startX = -(width/2);
-    startY = (height/4);
-    frameRate(60);
-    rectMode(CENTER);
-    createGUI();
-    animationSpeed = (width-paddingx)/animationTime;    //Calculated Speed to be used in animation
-    mainmenu();;
-    f = createFont("Arial",25);
+  size(600, 600);
+  startX = -(width/2);
+  startY = (height/4);
+  frameRate(60);
+  rectMode(CENTER);
+  createGUI();
+  animationSpeed = (width-paddingx)/animationTime;    //Calculated Speed to be used in animation
+  mainmenu();;
+  f = createFont("Arial",25);
 }
 
 void draw(){

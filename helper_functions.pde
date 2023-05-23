@@ -100,10 +100,12 @@ void keyPressed() {
       runtimer = false;
       checkanswer();
       next.setVisible(true);
+      check.setVisible(false);
+      submit.setVisible(false);
     }
     else {
       if (key != CODED){
-        if (user_answer.equals("Type Answer"))
+        if (user_answer.equals("Type answer"))
           user_answer = "";
         if (abletotype)
           user_answer += key;
