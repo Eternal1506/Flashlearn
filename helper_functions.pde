@@ -122,7 +122,7 @@ int userRating() {
           listSum += user_Cards.get(i).useranswers.get(j);
           total ++; //<>//
       }
-      correct =+ listSum;
+      correct += listSum;
   }
   int rating = round(correct/total * 100);
   return rating; //<>//
