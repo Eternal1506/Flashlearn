@@ -122,12 +122,12 @@ int userRating() {
     for (int j = 0; j < user_Cards.get(i).useranswers.size(); j++)
     { //<>//
       listSum += user_Cards.get(i).useranswers.get(j);
-      total ++; //<>//
+      total ++; //<>// //<>//
     }
     correct += listSum;
   } //<>//
   int rating = round(correct/total * 100);
-  return rating; //<>//
+  return rating; //<>// //<>//
 }
 
 IntList index;
@@ -165,6 +165,7 @@ void checkanswer(){
     user_answer = "Correct answer: " + cardlist.get(currentcard).answer;
     cardlist.get(currentcard).displayCard();
     questsRightInaRow = 0;
+    answerstreak = 1; 
   }
 }
 

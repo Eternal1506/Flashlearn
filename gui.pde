@@ -17,9 +17,16 @@
 public void start_click(GButton source, GEvent event) { //_CODE_:start:783324:
   if (state == "menu")
     makecard();
-  else if (state == "quiz")
+  else if (state == "quiz"){
     start.setVisible(false);
+    background(255);
+    questsRightInaRow = 0;
+    answerstreak += 1;
+    next.setVisible(true);
+    check.setVisible(true);
+    currentcard += 1;
     quizfunction();
+  }
 } //_CODE_:start:783324:
 
 public void next_click(GButton source, GEvent event) { //_CODE_:next:685857:

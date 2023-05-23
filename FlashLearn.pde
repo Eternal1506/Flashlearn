@@ -25,7 +25,7 @@ int timer = 0;
 int timerStart = 0;
 int countDown;
 int countDownStart = 20;
-int c = 0;
+int answerstreak = 1;
 int questsRightInaRow = 0;
 float correct;
 float total;
@@ -65,9 +65,11 @@ void draw(){
     user_Cards.get(currentcard).displayCard();
   }
   else if ( state ==  "quiz"){
-    if (questsRightInaRow % 5 == 0){
+    if (questsRightInaRow % 5 == 0 && questsRightInaRow != 0){ // not working rn
       start.setText("Continue");
       start.setVisible(true);
+      next.setVisible(false);
+      check.setVisible(false);
       congratsScreen(); 
     }
     else {
