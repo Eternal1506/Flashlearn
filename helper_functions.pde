@@ -4,7 +4,7 @@ void nextcard(){ // Alogorithm to determine the order of card to be displayed (a
   cardbel = new ArrayList<Card>();
   cardabv = new ArrayList<Card>();
 
-  for (Card c : user_Cards){ 
+  for (Card c : user_Cards){
     c.Correctanswerprob();
     if (c.currentprob < desiredprob){
       cardbel.add(c);
@@ -113,8 +113,8 @@ void keyPressed() {
 }
 
 int userRating() {
-  float correct = 0;
-  float total = 0;
+  correct = 0;
+  total = 0;
   for (int i = 0; i < user_Cards.size(); i++) {
     int listSum = 0;
     for (int j = 0; j < user_Cards.get(i).useranswers.size(); j++)
