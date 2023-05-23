@@ -1,4 +1,4 @@
-void mainmenu(){
+void mainmenu() {
   state = "menu";
   start.setVisible(true);
   next.setVisible(false);
@@ -14,7 +14,7 @@ void mainmenu(){
   check.setVisible(false);
 }
 
-void makecard(){
+void makecard() {
   background(255);
   state = "make";
   start.setVisible(false);
@@ -48,7 +48,7 @@ void studycards() {
   hard.setVisible(false);
   check.setVisible(false);
 }
-void startquiz(){
+void startquiz() {
   state = "quiz";
   start.setVisible(false);
   next.setVisible(false);
@@ -67,7 +67,7 @@ void startquiz(){
 
 }
 void startScreen() {
- if (startX < 300) {
+ if (startX < 300){
   rectMode(CORNER);
   //Text
   background(0);
@@ -94,7 +94,7 @@ void startScreen() {
  }
 }
 
-void showrating(){
+void showrating() {
   state = "rate";
   start.setVisible(false);
   next.setVisible(false);
@@ -110,7 +110,7 @@ void showrating(){
   check.setVisible(false);
 }
 
-void ratingscreen(int rate){
+void ratingscreen(int rate) {
     rectMode(CENTER);
     textAlign(CENTER);
     if (rate <= 80 && rate > 60){

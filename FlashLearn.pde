@@ -12,8 +12,8 @@ ArrayList<Card> cardbel = new ArrayList<Card>();
 ArrayList<Card> cardabv = new ArrayList<Card>();
 float animationTime = 5;
 float animationSpeed;    //time (in seconds) the animation takes
-float paddingx =50;
-float paddingy = 100;
+float paddingx = 50;      //the horizontal distance between the card and the edge
+float paddingy = 100;    //the vertical distance between the card and the edge
 float paddingxCopy = paddingx;
 float desiredprob = 0.7;
 int startX, startY;
@@ -27,8 +27,8 @@ int countDown;
 int countDownStart = 20;
 int answerstreak = 1;
 int questsRightInaRow = 0;
-float correct;
-float total;
+float correct;    //# of questions answered correctly 
+float total;    //total # of questions answered
 
 void setup(){
   size(600, 600);
