@@ -115,18 +115,24 @@ void ratingscreen(int rate){
     textAlign(CENTER);
     if (rate <= 80 && rate > 60){
       background(3, 223, 252);
-      text("You got " + correct + "/" + total + " questions right " + ", "+ rate + "% accuracy", width/2, height/2, width/2, 100);
-      text("Average....", width/2, 2 * height/3, width/2, 100);
+      text("Question Right: " + int(correct), width/2, height/5, width/2, 100);
+      text("Total Questions Answered: " + int(total), width/2, 2 * height/5, width/2, 100);
+      text("Accuracy: " + rate, width/2, 3 * height/5, width/2, 100);
+      text("Average....", width/2, 4 * height/5, width/2, 100);
     }
     else if (rate <= 60){
       background(252, 244, 3);
-      text("You got " + correct + "/" + total + " questions right " + ", "+ rate + "% accuracy", width/2, height/2, width/2, 100);
-      text("You might need to work harder :(", width/2, 2 * height/3, width/2, 100);
+      text("Question Right: " + int(correct), width/2, height/5, width/2, 100);
+      text("Total Questions Answered: " + int(total), width/2, 2 * height/5, width/2, 100);
+      text("Accuracy: " + rate, width/2, 3 * height/5, width/2, 100);
+      text("You might need to work harder :(", width/2, 4 * height/5, width/2, 100);
     }
     else{
       background(40, 252, 3);
-      text("You got " + correct + "/" + total + " questions right " + ", "+ rate + "% accuracy", width/2, height/2, width/2, 100);
-      text("That's pretty good :)", width/2, 2 * height/3, width/2, 100);
+      text("Question Right: " + int(correct), width/2, height/5, width/2, 100);
+      text("Total Questions Answered: " + int(total), width/2, 2 * height/5, width/2, 100);
+      text("Accuracy: " + rate, width/2, 3 * height/5, width/2, 100);
+      text("That's pretty good :)", width/2, 4 * height/5, width/2, 100);
     }
 }
 

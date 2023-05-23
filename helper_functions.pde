@@ -101,7 +101,7 @@ void keyPressed() {
       checkanswer();
       next.setVisible(true);
       check.setVisible(false);
-      submit.setVisible(false);
+      submit.setVisible(true);
     }
     else {
       if (key != CODED){
@@ -120,12 +120,12 @@ int userRating() {
   for (int i = 0; i < user_Cards.size(); i++) {
     int listSum = 0;
     for (int j = 0; j < user_Cards.get(i).useranswers.size(); j++)
-    {
+    { //<>//
       listSum += user_Cards.get(i).useranswers.get(j);
       total ++; //<>//
     }
     correct += listSum;
-  }
+  } //<>//
   int rating = round(correct/total * 100);
   return rating; //<>//
 }
