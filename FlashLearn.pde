@@ -25,6 +25,8 @@ int timer = 0;
 int timerStart = 0;
 int countDown;
 int countDownStart = 20;
+int c = 0;
+int questsRightInaRow = 0;
 float correct;
 float total;
 
@@ -63,15 +65,13 @@ void draw(){
     user_Cards.get(currentcard).displayCard();
   }
   else if ( state ==  "quiz"){
-    if (abletotype)
-      background(255);
-    cardlist.get(currentcard).displayCard();
-    countDownStart = cardlist.get(currentcard).timer;
-    if (runtimer){
-      timer();
+    if (questsRightInaRow % 5 == 0){
+      start.setText("Continue");
+      start.setVisible(true);
+      congratsScreen(); 
     }
-    if (currentcard == cardlist.size()-1){
-      nextcard();
+    else {
+      quizfunction();
     }
   }
   else if (state == "rate"){

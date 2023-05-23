@@ -158,10 +158,27 @@ void checkanswer(){
   if (cardlist.get(currentcard).answer.equals(user_answer)){
     background(0,255,0);
     cardlist.get(currentcard).displayCard();
+    questsRightInaRow += 1;
   }
   else{
     background(255,0,0);
     user_answer = "Correct answer: " + cardlist.get(currentcard).answer;
     cardlist.get(currentcard).displayCard();
+    questsRightInaRow = 0;
+  }
+}
+
+void quizfunction(){
+    
+  if (abletotype)
+    background(255);
+  cardlist.get(currentcard).displayCard();
+  countDownStart = cardlist.get(currentcard).timer;
+  if (runtimer){
+    timer();
+  }
+  
+  if (currentcard == cardlist.size()-1){
+    nextcard();
   }
 }

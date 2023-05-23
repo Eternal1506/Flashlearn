@@ -15,7 +15,11 @@
  */
 
 public void start_click(GButton source, GEvent event) { //_CODE_:start:783324:
-  makecard();
+  if (state == "menu")
+    makecard();
+  else if (state == "quiz")
+    start.setVisible(false);
+    quizfunction();
 } //_CODE_:start:783324:
 
 public void next_click(GButton source, GEvent event) { //_CODE_:next:685857:
