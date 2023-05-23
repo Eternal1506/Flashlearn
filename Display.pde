@@ -129,3 +129,13 @@ void ratingscreen(int rate) {
         text("That's pretty good :)", width/2, 2 * height/3, width/2, 100);
     }
 }
+
+void congratsScreen() {
+  
+  //Text
+  background(40, 252, 3);
+  textAlign(CENTER);
+  fill(0);
+  textSize(65);
+  text("Congratulations! You got" + questsRightInaRow + "questions correct in a row!",width/2,height/2);
+}
