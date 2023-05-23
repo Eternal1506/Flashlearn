@@ -39,13 +39,11 @@ void setup(){
 }
 
 void draw(){
-
   //Initialize variables
   if (state == "menu"){
      startScreen();
   }
   else if (state == "make"){
-    
     if( numcard > user_Cards.size()){
       int n = abs(numcard-user_Cards.size());
       for(int i = 0; i < n; i++){
@@ -70,7 +68,6 @@ void draw(){
     if (runtimer){
       timer();
     }
-    
     if (currentcard == cardlist.size()-1){
       nextcard();
     }
