@@ -71,6 +71,5 @@ class Card {
     else{
       text(user_answer, width/2, paddingy+(3*(height-2*paddingy)/4), height/2, (height-2*paddingy)/2);
     }
-
   }
 }

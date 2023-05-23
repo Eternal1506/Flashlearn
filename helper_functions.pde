@@ -4,7 +4,7 @@ void nextcard(){ // Alogorithm to determine the order of card to be displayed (a
   cardbel = new ArrayList<Card>();
   cardabv = new ArrayList<Card>();
 
-  for (Card c : user_Cards){ 
+  for (Card c : user_Cards){
     c.Correctanswerprob();
     if (c.currentprob < desiredprob){
       cardbel.add(c);
@@ -100,10 +100,12 @@ void keyPressed() {
       runtimer = false;
       checkanswer();
       next.setVisible(true);
+      check.setVisible(false);
+      submit.setVisible(false);
     }
     else {
       if (key != CODED){
-        if (user_answer.equals("Type Answer"))
+        if (user_answer.equals("Type answer"))
           user_answer = "";
         if (abletotype)
           user_answer += key;
@@ -113,16 +115,16 @@ void keyPressed() {
 }
 
 int userRating() {
-  float correct = 0;
-  float total = 0;
+  correct = 0;
+  total = 0;
   for (int i = 0; i < user_Cards.size(); i++) {
-      int listSum = 0;
-      for (int j = 0; j < user_Cards.get(i).useranswers.size(); j++)
-      {
-          listSum += user_Cards.get(i).useranswers.get(j);
-          total ++; //<>//
-      }
-      correct += listSum;
+    int listSum = 0;
+    for (int j = 0; j < user_Cards.get(i).useranswers.size(); j++)
+    {
+      listSum += user_Cards.get(i).useranswers.get(j);
+      total ++; //<>//
+    }
+    correct += listSum;
   }
   int rating = round(correct/total * 100);
   return rating; //<>//
@@ -164,7 +166,6 @@ void checkanswer(){
     cardlist.get(currentcard).displayCard();
     questsRightInaRow = 0;
   }
-  
 }
 
 void quizfunction(){

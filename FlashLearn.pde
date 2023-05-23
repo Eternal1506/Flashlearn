@@ -1,6 +1,6 @@
 import g4p_controls.*;
 String state;
-String user_answer = "Type Answer";
+String user_answer = "Type answer";
 boolean mainmenu = true;
 boolean drawCard = false;
 boolean typingquestion = true;
@@ -27,27 +27,27 @@ int countDown;
 int countDownStart = 20;
 int c = 0;
 int questsRightInaRow = 0;
+float correct;
+float total;
 
 void setup(){
-    size(600, 600);
-    startX = -(width/2);
-    startY = (height/4);
-    frameRate(60);
-    rectMode(CENTER);
-    createGUI();
-    animationSpeed = (width-paddingx)/animationTime;    //Calculated Speed to be used in animation
-    mainmenu();;
-    f = createFont("Arial",25);
+  size(600, 600);
+  startX = -(width/2);
+  startY = (height/4);
+  frameRate(60);
+  rectMode(CENTER);
+  createGUI();
+  animationSpeed = (width-paddingx)/animationTime;    //Calculated Speed to be used in animation
+  mainmenu();;
+  f = createFont("Arial",25);
 }
 
 void draw(){
-
   //Initialize variables
   if (state == "menu"){
      startScreen();
   }
   else if (state == "make"){
-    
     if( numcard > user_Cards.size()){
       int n = abs(numcard-user_Cards.size());
       for(int i = 0; i < n; i++){
@@ -70,7 +70,7 @@ void draw(){
       start.setVisible(true);
       congratsScreen(); 
     }
-    else{
+    else {
       quizfunction();
     }
   }
