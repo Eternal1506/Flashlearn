@@ -120,12 +120,12 @@ int userRating() {
   for (int i = 0; i < user_Cards.size(); i++) {
     int listSum = 0;
     for (int j = 0; j < user_Cards.get(i).useranswers.size(); j++)
-    { //<>//
+    { //<>// //<>//
       listSum += user_Cards.get(i).useranswers.get(j);
       total ++; //<>//
     }
     correct += listSum;
-  } //<>//
+  } //<>// //<>//
   int rating = round(correct/total * 100);
   return rating; //<>//
 }
@@ -141,7 +141,7 @@ void randomizelist(ArrayList<Card> c1, ArrayList<Card> c2 ){
     c2.add(c1.get(index.get(i)));
   }
 }
-void timer(){
+void timer() {
   timer = int(millis()/ 1000 - timerStart);     // counts up from the start time (0)
   countDown = int (countDownStart - timer);
   text ("Time left: " + countDown ,300,35);
@@ -151,7 +151,7 @@ void timer(){
     next.setVisible(true);
   }
 }
-void checkanswer(){
+void checkanswer() {
   
   cardlist.get(currentcard).CheckUserAnswer(user_answer);
   abletotype = false;
@@ -168,7 +168,7 @@ void checkanswer(){
   }
 }
 
-void quizfunction(){
+void quizfunction() {
     
   if (abletotype)
     background(255);
