@@ -22,10 +22,16 @@ public void start_click(GButton source, GEvent event) { //_CODE_:start:783324:
     background(255);
     questsRightInaRow = 0;
     answerstreak += 1;
-    next.setVisible(true);
+    next.setVisible(false);
     check.setVisible(true);
+    submit.setVisible(false);
+    countDownStart = cardlist.get(currentcard).timer;
+    timerStart = int(millis()/1000);
+    countDown  = countDownStart;
+    runtimer = true;
+    abletotype = true;
+    user_answer = "Type answer";
     currentcard += 1;
-    quizfunction();
   }
 } //_CODE_:start:783324:
 

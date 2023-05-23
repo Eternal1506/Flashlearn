@@ -70,6 +70,7 @@ void draw(){
       start.setVisible(true);
       next.setVisible(false);
       check.setVisible(false);
+      submit.setVisible(false);
       congratsScreen(); 
     }
     else {

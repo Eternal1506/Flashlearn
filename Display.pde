@@ -142,6 +142,6 @@ void congratsScreen() {
   background(40, 252, 3);
   textAlign(CENTER);
   fill(0);
-  textSize(65);
-  text("Congratulations! You got" + answerstreak * questsRightInaRow + "questions correct in a row!",width/2,height/2);
+  textSize(25);
+  text("Congratulations! You got " + answerstreak * questsRightInaRow + " questions correct in a row!",width/2,height/2);
 }
