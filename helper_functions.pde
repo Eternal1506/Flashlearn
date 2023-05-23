@@ -113,17 +113,19 @@ void keyPressed() {
 }
 
 int userRating() {
+  float correct = 0;
+  float total = 0;
   for (int i = 0; i < user_Cards.size(); i++) {
       int listSum = 0;
       for (int j = 0; j < user_Cards.get(i).useranswers.size(); j++)
       {
           listSum += user_Cards.get(i).useranswers.get(j);
-          total ++;
+          total ++; //<>//
       }
       correct =+ listSum;
   }
-  int rating = correct/total * 100;
-  return rating;
+  int rating = round(correct/total * 100);
+  return rating; //<>//
 }
 
 IntList index;

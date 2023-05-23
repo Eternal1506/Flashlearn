@@ -25,8 +25,6 @@ int timer = 0;
 int timerStart = 0;
 int countDown;
 int countDownStart = 20;
-float correct = 0;
-float total = 0;
 
 void setup(){
     size(600, 600);
