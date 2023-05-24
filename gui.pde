@@ -14,7 +14,7 @@
  * =========================================================
  */
 
-public void start_click(GButton source, GEvent event) { //_CODE_:start:783324:
+public void start_click(GButton source, GEvent event) { // start button
   if (state == "menu")
     makecard();
   else if (state == "quiz"){
@@ -33,10 +33,11 @@ public void start_click(GButton source, GEvent event) { //_CODE_:start:783324:
     user_answer = "Type answer";
     currentcard += 1;
   }
+  
 } //_CODE_:start:783324:
 
 public void next_click(GButton source, GEvent event) { //_CODE_:next:685857:
-  if (state == "make"){
+  if (state == "make"){ // button to go to the next card
     if (currentcard != numcard - 1){
       currentcard += 1;
       typingquestion = true;
@@ -63,7 +64,7 @@ public void next_click(GButton source, GEvent event) { //_CODE_:next:685857:
 } //_CODE_:next:685857:
 
 public void previous_click(GButton source, GEvent event) { //_CODE_:previous:940897:
-  if (currentcard != 0){
+  if (currentcard != 0){ // button to go the pervious cards
     typingquestion = true;
     currentcard -= 1;
   }
@@ -71,7 +72,7 @@ public void previous_click(GButton source, GEvent event) { //_CODE_:previous:940
 } //_CODE_:previous:940897:
 
 public void Remove_click(GButton source, GEvent event) { //_CODE_:Remove:730698:
-  if (numcard != 1){
+  if (numcard != 1){ // button to remove cards
     user_Cards.remove(currentcard);
     numcard -= 1;
   }
@@ -86,7 +87,7 @@ public void Add_click(GButton source, GEvent event) { //_CODE_:Add:490421:
 } //_CODE_:Add:490421:
 
 public void typemake_click1(GButton source, GEvent event) { //_CODE_:typemake:595480:
-  if (typingquestion){
+  if (typingquestion){ // button to change from typing question to typing answer
     typemake.setText("Type Question");
   }
   else{
@@ -98,7 +99,7 @@ public void typemake_click1(GButton source, GEvent event) { //_CODE_:typemake:59
 
 public void submit_click(GButton source, GEvent event) { //_CODE_:submit:709434:
   background(255);
-  if (state.equals("make")){
+  if (state.equals("make")){ // making submit button do different stuff based on what mode it is
     submit.setText("Quiz me!");
     studycards();
   }

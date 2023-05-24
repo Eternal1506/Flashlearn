@@ -43,7 +43,7 @@ class Card {
     rect(width/2, paddingy+((height-2*paddingy)/4), height/2, (height-2*paddingy)/2);    //Question part box
     rect(width/2, paddingy+(3*(height-2*paddingy)/4), height/2, (height-2*paddingy)/2);    //Answer part box
     if (state == "make"){
-    if (typingquestion)
+    if (typingquestion) // Highlight the question if user is typing question
       fill(0,0,200);
     else
       fill(0);

@@ -35,7 +35,7 @@ void nextcard(){    // Alogorithm to determine the order of card to be displayed
       cardlist.add(newC);
     }
   }
-} // Its done but needs to be checked
+} 
 
 Card pickrandomcard(Card c, int s, ArrayList<Card> list){ // helper function for the nextcard()
   int r = int(random(s));
@@ -73,7 +73,6 @@ void keyPressed() {
        typingquestion = !typingquestion;
     }
     else {
-      // Otherwise, concatenate the String
       // Each character typed by the user is added to the end of the String variable.
       if (state == "make"){
         if (key != CODED){
@@ -120,15 +119,15 @@ int userRating() {
   for (int i = 0; i < user_Cards.size(); i++){    //get rating from correct and total
     int listSum = 0;
     for (int j = 0; j < user_Cards.get(i).useranswers.size(); j++)
-    { //<>//
-      listSum += user_Cards.get(i).useranswers.get(j);
-      total ++; //<>//
-    }
+    { 
+      listSum += user_Cards.get(i).useranswers.get(j); //<>//
+      total ++; 
+    } //<>//
     correct += listSum;
-  } //<>//
-  int rating = round(correct/total * 100);
-  return rating; //<>//
-}
+  } 
+  int rating = round(correct/total * 100); //<>//
+  return rating; 
+} //<>//
 
 IntList index;
 void randomizelist(ArrayList<Card> c1, ArrayList<Card> c2 ){    //shuffle the cards for quiz
@@ -170,7 +169,7 @@ void checkanswer() {
 }
 
 void quizfunction() {
-  //display during quiz stage
+  //display cards during quiz stage
   if (abletotype)
     background(255);
   cardlist.get(currentcard).displayCard();

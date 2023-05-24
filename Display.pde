@@ -1,4 +1,4 @@
-void mainmenu() {
+void mainmenu() { // setting buttons and values for startscreen
   state = "menu";
   start.setVisible(true);
   next.setVisible(false);
@@ -14,7 +14,7 @@ void mainmenu() {
   check.setVisible(false);
 }
 
-void makecard() {
+void makecard() { // setting buttons and values for card making
   background(255);
   state = "make";
   start.setVisible(false);
@@ -31,7 +31,7 @@ void makecard() {
   check.setVisible(false);
 }
 
-void studycards() {
+void studycards() { // setting buttons and values for letting user study the cards
   background(255);
   state = "study";
   start.setVisible(false);
@@ -48,7 +48,7 @@ void studycards() {
   hard.setVisible(false);
   check.setVisible(false);
 }
-void startquiz() {
+void startquiz() { // setting buttons and values for quizing the user
   state = "quiz";
   start.setVisible(false);
   next.setVisible(false);
@@ -66,7 +66,7 @@ void startquiz() {
   randomizelist(user_Cards, cardlist);
 
 }
-void startScreen() {
+void startScreen() { // displays the start screen
  if (startX < 300){
   rectMode(CORNER);
   //Text
@@ -94,7 +94,7 @@ void startScreen() {
  }
 }
 
-void showrating() {
+void showrating() { // setting buttons and values for rating screen
   state = "rate";
   start.setVisible(false);
   next.setVisible(false);
@@ -110,7 +110,7 @@ void showrating() {
   check.setVisible(false);
 }
 
-void ratingscreen(int rate) {
+void ratingscreen(int rate) { //displays the rating screen
     rectMode(CENTER);
     textAlign(CENTER);
     //show rating and feedback
@@ -137,7 +137,7 @@ void ratingscreen(int rate) {
     }
 }
 
-void congratsScreen() {
+void congratsScreen() { // the reward the screen
   background(40, 252, 3);
   textAlign(CENTER);
   fill(0);
