@@ -12,6 +12,7 @@ void mainmenu() { // setting buttons and values for startscreen
   easy.setVisible(false);
   hard.setVisible(false);
   check.setVisible(false);
+  restart.setVisible(false);
 }
 
 void makecard() { // setting buttons and values for card making
@@ -29,6 +30,7 @@ void makecard() { // setting buttons and values for card making
   easy.setVisible(true);
   hard.setVisible(true);
   check.setVisible(false);
+  restart.setVisible(false);
 }
 
 void studycards() { // setting buttons and values for letting user study the cards
@@ -47,6 +49,7 @@ void studycards() { // setting buttons and values for letting user study the car
   easy.setVisible(false);
   hard.setVisible(false);
   check.setVisible(false);
+  restart.setVisible(false);
 }
 void startquiz() { // setting buttons and values for quizing the user
   state = "quiz";
@@ -63,6 +66,7 @@ void startquiz() { // setting buttons and values for quizing the user
   easy.setVisible(false);
   hard.setVisible(false);
   check.setVisible(true);
+  restart.setVisible(false);
   randomizelist(user_Cards, cardlist);
 
 }
@@ -108,6 +112,7 @@ void showrating() { // setting buttons and values for rating screen
   easy.setVisible(false);
   hard.setVisible(false);
   check.setVisible(false);
+  restart.setVisible(true);
 }
 
 void ratingscreen(int rate) { //displays the rating screen
