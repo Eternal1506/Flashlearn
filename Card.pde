@@ -10,7 +10,7 @@ class Card {
   Card (String q, String a) {
     this.question = q;
     this.answer = a;
-    this.timer = 30;
+    this.timer = 20;
     this.useranswers = new IntList();
   }
   
