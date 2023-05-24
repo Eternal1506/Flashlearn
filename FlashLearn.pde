@@ -7,7 +7,7 @@ boolean typingquestion = true;
 boolean abletotype = true;
 boolean runtimer = true;
 ArrayList<Card> user_Cards = new ArrayList<Card>();    //ArrayList of all cards from user
-ArrayList<Card> cardlist = new ArrayList<Card>();
+ArrayList<Card> cardlist = new ArrayList<Card>();    //Arraylist of cards in order
 ArrayList<Card> cardbel = new ArrayList<Card>();
 ArrayList<Card> cardabv = new ArrayList<Card>();
 float animationTime = 5;
@@ -35,7 +35,7 @@ void setup(){
   startX = -(width/2);
   startY = (height/4);
   frameRate(60);
-  rectMode(CENTER);
+  rectMode(CENTER);    //set text mode
   createGUI();
   animationSpeed = (width-paddingx)/animationTime;    //Calculated Speed to be used in animation
   mainmenu();;
@@ -43,8 +43,7 @@ void setup(){
 }
 
 void draw(){
-  //Initialize variables
-  if (state == "menu"){
+  if (state == "menu"){    //draw according to stages
      startScreen();
   }
   else if (state == "make"){
@@ -62,10 +61,10 @@ void draw(){
     }
   }
   else if ( state == "study"){
-    user_Cards.get(currentcard).displayCard();
+    user_Cards.get(currentcard).displayCard();    //show cards for study
   }
   else if ( state ==  "quiz"){
-    if (questsRightInaRow % 5 == 0 && questsRightInaRow != 0){ // not working rn
+    if (questsRightInaRow % 5 == 0 && questsRightInaRow != 0){    //reward user if get 5 questions right in a row
       start.setText("Continue");
       start.setVisible(true);
       next.setVisible(false);
@@ -73,15 +72,15 @@ void draw(){
       submit.setVisible(false);
       congratsScreen(); 
     }
-    else {
+    else {    //show quiz
       quizfunction();
     }
   }
-  else if (state == "rate"){
+  else if (state == "rate"){    //show results and feedback
     int r = userRating();
     ratingscreen(r);
   }
-  else{
+  else{    //darw the starting screen
     startScreen();
   }
 }

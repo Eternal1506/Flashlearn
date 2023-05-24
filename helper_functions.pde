@@ -1,4 +1,4 @@
-void nextcard(){ // Alogorithm to determine the order of card to be displayed (adaptive learning funcition) 
+void nextcard(){    // Alogorithm to determine the order of card to be displayed (adaptive learning funcition) 
   float desiredprob = 0.7;
 
   cardbel = new ArrayList<Card>();
@@ -51,7 +51,7 @@ Card pickrandomcard(Card c, int s, ArrayList<Card> list){ // helper function for
 }
 
 void keyPressed() {
-   //If the backspace key is pressed, removes the last character in the string
+  //If the backspace key is pressed, removes the last character in the string
   if (state == "make"){
     if (key == BACKSPACE ){
       if (typingquestion){
@@ -63,7 +63,7 @@ void keyPressed() {
           user_Cards.get(currentcard).answer = user_Cards.get(currentcard).answer.substring(0, user_Cards.get(currentcard).answer.length()-1);
       }
     }
-    else if (key == ENTER){
+    else if (key == ENTER){    //enter as the shortcut to switch between typing the question and the answer
       if (typingquestion){
         typemake.setText("Type Question");
       }
@@ -91,8 +91,8 @@ void keyPressed() {
       }
     }
   }
-  else if (state == "quiz"){
-    if (key == BACKSPACE ){
+  else if (state == "quiz"){    //get text for the answer part
+    if (key == BACKSPACE){
         if (!user_answer.equals("") && abletotype)
           user_answer =  user_answer.substring(0, user_answer.length()-1);
     }
@@ -115,23 +115,23 @@ void keyPressed() {
 }
 
 int userRating() {
-  correct = 0;
+  correct = 0;    //initialize for each frame
   total = 0;
-  for (int i = 0; i < user_Cards.size(); i++) {
+  for (int i = 0; i < user_Cards.size(); i++){    //get rating from correct and total
     int listSum = 0;
     for (int j = 0; j < user_Cards.get(i).useranswers.size(); j++)
-    { //<>// //<>//
+    { //<>//
       listSum += user_Cards.get(i).useranswers.get(j);
-      total ++; //<>// //<>//
+      total ++; //<>//
     }
     correct += listSum;
-  } //<>// //<>//
+  } //<>//
   int rating = round(correct/total * 100);
-  return rating; //<>// //<>//
+  return rating; //<>//
 }
 
 IntList index;
-void randomizelist(ArrayList<Card> c1, ArrayList<Card> c2 ){
+void randomizelist(ArrayList<Card> c1, ArrayList<Card> c2 ){    //shuffle the cards for quiz
    index = new IntList();
   for( int i = 0; i < c1.size(); i++){
     index.append(i);
@@ -141,7 +141,7 @@ void randomizelist(ArrayList<Card> c1, ArrayList<Card> c2 ){
     c2.add(c1.get(index.get(i)));
   }
 }
-void timer() {
+void timer() {    //timer for answering the questions
   timer = int(millis()/ 1000 - timerStart);     // counts up from the start time (0)
   countDown = int (countDownStart - timer);
   text ("Time left: " + countDown ,300,35);
@@ -152,7 +152,7 @@ void timer() {
   }
 }
 void checkanswer() {
-  
+  //check the answer form user
   cardlist.get(currentcard).CheckUserAnswer(user_answer);
   abletotype = false;
   if (cardlist.get(currentcard).answer.equals(user_answer)){
@@ -170,7 +170,7 @@ void checkanswer() {
 }
 
 void quizfunction() {
-    
+  //display during quiz stage
   if (abletotype)
     background(255);
   cardlist.get(currentcard).displayCard();

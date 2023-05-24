@@ -2,7 +2,7 @@ class Card {
   //field
   String question;
   String answer;
-  IntList useranswers;
+  IntList useranswers;    //stores if the answer from the user is right or wrong
   int timer;
   float currentprob;
   
@@ -32,18 +32,16 @@ class Card {
     this.currentprob = float(cardscore)/this.useranswers.size();
   }
    
-  void displayCard() {
+  void displayCard() {    //display function of cards
     rectMode(CENTER);
     textAlign(CENTER);
     textFont(f);
-    
-    //if (paddingxCopy <= width - paddingx)
-    //  paddingxCopy++;
+
     strokeWeight(3);
     fill(255);
-    rect(width/2, height/2, round(width-2*paddingxCopy), round(height - paddingy));    
-    rect(width/2, paddingy+((height-2*paddingy)/4), height/2, (height-2*paddingy)/2);
-    rect(width/2, paddingy+(3*(height-2*paddingy)/4), height/2, (height-2*paddingy)/2);
+    rect(width/2, height/2, round(width-2*paddingxCopy), round(height - paddingy));    //Card box
+    rect(width/2, paddingy+((height-2*paddingy)/4), height/2, (height-2*paddingy)/2);    //Question part box
+    rect(width/2, paddingy+(3*(height-2*paddingy)/4), height/2, (height-2*paddingy)/2);    //Answer part box
     if (state == "make"){
     if (typingquestion)
       fill(0,0,200);
@@ -65,10 +63,10 @@ class Card {
       fill(0);
     }
     if (state != "quiz"){
-      text(this.answer, width/2, paddingy+(3*(height-2*paddingy)/4), height/2, (height-2*paddingy)/2);    //display the answer
+      text(this.answer, width/2, paddingy+(3*(height-2*paddingy)/4), height/2, (height-2*paddingy)/2);    //display the correct answer
     }
     else{
-      text(user_answer, width/2, paddingy+(3*(height-2*paddingy)/4), height/2, (height-2*paddingy)/2);
+      text(user_answer, width/2, paddingy+(3*(height-2*paddingy)/4), height/2, (height-2*paddingy)/2);    //show the answer form the user
     }
   }
 }
