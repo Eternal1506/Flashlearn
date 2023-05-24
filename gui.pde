@@ -133,6 +133,10 @@ public void check_click(GButton source, GEvent event) { //_CODE_:check:467746:
 
 public void restart_click1(GButton source, GEvent event) { //_CODE_:restart:572771:
   currentcard = 0; //restart the program
+  cardlist = new ArrayList<Card>();
+  for (Card c : user_Cards){
+    c.useranswers = new IntList();
+  }
   makecard();
 } //_CODE_:restart:572771:
 

@@ -120,14 +120,14 @@ void ratingscreen(int rate) { //displays the rating screen
     textAlign(CENTER);
     //show rating and feedback
     if (rate <= 80 && rate > 60){
-      background(3, 223, 252);
+      background(200, 223, 50);
       text("Question Right: " + int(correct), width/2, height/5, width/2, 100);
       text("Total Questions Answered: " + int(total), width/2, 2 * height/5, width, 100);
       text("Accuracy: " + rate + "%", width/2, 3 * height/5, width, 100);
       text("Average, not bad", width/2, 4 * height/5, width, 100);
     }
     else if (rate <= 60){
-      background(252, 244, 3);
+      background(252, 70, 3);
       text("Question Right: " + int(correct), width/2, height/5, width/2, 100);
       text("Total Questions Answered: " + int(total), width/2, 2 * height/5, width, 100);
       text("Accuracy: " + rate + "%", width/2, 3 * height/5, width, 100);
